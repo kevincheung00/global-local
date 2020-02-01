@@ -8,5 +8,25 @@
         "latitude" : 43,
         "longitude": -81.2,
         "contact": "666-666-6666"
+    },
+    {
+        "id": 2,
+        "firstName": "Sarah",
+        "lastName": "Poe",
+        "age": 34,
+        "gender": "female",
+        "latitude" : 43.02,
+        "longitude": -81.4,
+        "contact": "726-666-8888"
+    },
+    {
+        "id": 3,
+        "firstName": "Papa",
+        "lastName": "Johns",
+        "age": 68,
+        "gender": "male",
+        "latitude" : 43.06,
+        "longitude": -81.03,
+        "contact": "565-243-4455"
     }
 ]

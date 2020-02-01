@@ -21,12 +21,19 @@ import FirstComponent from "./components/firstComponent"
 
 class App extends Component {
   render() {
-    return (
-            <Router history={hashHistory}>
-            <Route path='/' component={Home} />
-            <Route path='/address' component={Address} />
-            </Router>
-          )
+    // return (
+    //         <Router history={hashHistory}>
+    //         <Route path='/' component={Home} />
+    //         <Route path='/address' component={Address} />
+    //         </Router>
+    //       )
+      return(
+        <div className="App">
+          <h1>Global Local</h1>
+          <Map />
+        </div>
+        
+      )
   }}
 
 const Home = () => <h1>Hello from Home!</h1>
