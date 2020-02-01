@@ -3,10 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from "react"
 import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { hashRouter } from "react-router-dom"
 import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
 import About from './components/about'
+import Navibar from './components/navbar'
 
 const date = "January 1st"
 
@@ -44,12 +46,17 @@ class App extends React.Component {
   render() {
       return(
         <div className="App">
+<<<<<<< HEAD
           <h1>Global Local</h1>
           
           
           <About />
           <Map />
 
+=======
+          <Navibar />
+          <Map />
+>>>>>>> b9fa75fa534227a77710e9c594f1665016c294fc
         </div>
       )
   }}
