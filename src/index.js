@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// import Menu from "components/Menu"
+//
+//
+// ReactDOM.render(<Menu />, document.GetElementById("menu"));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
