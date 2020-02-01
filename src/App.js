@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Component } from "react"
-import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import { hashRouter } from "react-router-dom"
 import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
 
