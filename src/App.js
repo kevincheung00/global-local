@@ -1,73 +1,110 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Component } from "react"
-import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { hashRouter } from "react-router-dom"
 import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
 import About from './components/about'
 import Navibar from './components/navbar'
 
+
 const date = "January 1st"
 
 const tourguide_data = [
   {
-    name: "Kevin Cheung",
-    age: 19,
-    rating: 5
-
+      "id": 1,
+      "firstName": "Josh",
+      "lastName": "Joe",
+      "age": 25,
+      "gender": "male",
+      "latitude" : 43,
+      "longitude": -81.2,
+      "contact": "666-666-6666"
   },
 
   {
-    name: "Jason Kim",
-    age: 19,
-    rating: 5
+      "id": 2,
+      "firstName": "Sarah",
+      "lastName": "Poe",
+      "age": 34,
+      "gender": "female",
+      "latitude" : 43.02,
+      "longitude": -81.4,
+      "contact": "726-666-8888"
   },
 
   {
-    name: "Alvina Lin",
-    age: 19,
-    rating: 5
-  },
-
-  {
-    name: "Fland Pan",
-    age: 19,
-    rating: 5
-  },
-  
-  {
-    name: "Leanne Li",
-    age: 19,
-    rating: 5
+      "id": 3,
+      "firstName": "Papa",
+      "lastName": "Johns",
+      "age": 68,
+      "gender": "male",
+      "latitude" : 43.06,
+      "longitude": -81.03,
+      "contact": "565-243-4455"
   }
 
 ]
 
 class App extends React.Component {
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {
-    
-    //   }
-    // }
+    constructor(props) {
+      super(props);
+      this.state = {
+        numClicks: 0,
+        view: 'splash',
+        user: null,
+        usernameInput: '',
+        userChoice: ''
+      }
+    }
   
   
-  render() {
-      return(
-        <div className="App">
-          <h1>Global Local</h1>
-          <About />
-          <Map />
-
+    render() {
+        return(
+            <div>
+            {this.header()}
+            <div className='container'>
+                {this.body()}
+            </div>
         </div>
-      )
-  }}
+        )
+    }
 
-const Home = () => <h1>Hello from Home!</h1>
-const Address = () => <h1>We are located at 555 Jackson St.</h1>
+    header = () => (
+        <div className='header'>
+            <h1>Global Local{this.state.user || ''}</h1>
+        </div>
+    );
+
+    body = () => {
+        const {view, allTweets} = this.state;
+        console.log(allTweets);
+        if (view === 'login')
+            return this.splashScreen();
+
+        if (view === 'viewing')
+            return this.browsingTweetsScreen();
+
+        if (view === 'tweeting')
+            return this.sendTweetScreen();
+    };
+
+    splashScreen = () => (
+        <form onSubmit={this.login}>
+            <h1>Username:</h1>
+            <input
+                className='text-input'
+                type="text"
+                name="username"
+                value={this.state.usernameInput}
+                onChange={e => this.setState({usernameInput: e.target.value})}
+            />
+            <br/>
+            <br/>
+            <br/>
+            <input className='button' type="submit" value="Submit"/>
+        </form>
+    );
+    }
 
 
 export default App;
