@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Map from './components/map'
 
 const App = () => {
   const APP_ID = "a36541af";
@@ -8,7 +9,8 @@ const App = () => {
 
   return(
     <div className="App">
-      <h1>Hello React</h1>
+      <h1>Global Local</h1>
+      <Map />
     </div>
   )
 }
