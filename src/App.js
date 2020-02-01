@@ -1,36 +1,35 @@
-<<<<<<< HEAD
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-const App = () => {
-
-  return(
-    <div className="App">
-      <h1>Global Local</h1>
-
-    </div>
-  )
-}
-
-export default App;
-=======
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react"
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import Map from './components/map'
+import FirstComponent from "./components/firstComponent"
 
-const App = () => {
-  const APP_ID = "a36541af";
-  const APP_KEY = "b8929d43d1f37d1d8545a937c4ec6a36";
+// const App = () => {
+//   const APP_ID = "a36541af";
+//   const APP_KEY = "b8929d43d1f37d1d8545a937c4ec6a36";
+//
+//   return(
+//     <div className="App">
+//       <h1>Global Local</h1>
+//       <FirstComponent displaytext="Kevin"/>
+//     </div>
+//   )
+// }
 
-  return(
-    <div className="App">
-      <h1>Global Local</h1>
-      <Map />
-    </div>
-  )
-}
+class App extends Component {
+  render() {
+    return (
+            <Router history={hashHistory}>
+            <Route path='/' component={Home} />
+            <Route path='/address' component={Address} />
+            </Router>
+          )
+  }}
+
+const Home = () => <h1>Hello from Home!</h1>
+const Address = () => <h1>We are located at 555 Jackson St.</h1>
+
 
 export default App;
->>>>>>> 3cae2a1d7c40512d3f54e2130ae5943e9656d27c
