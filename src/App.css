@@ -29,9 +29,7 @@
   }
   
   .header {
-    position: absolute;
-    width: 1243px;
-    height: 178px;
-    left: 197px;
-    top: 1px;
+    background-color: #ADDCD6;
+    padding: 50px;
+    height: 1px;
   }
