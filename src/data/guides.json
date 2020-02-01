@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "firstName": "Josh",
+        "lastName": "Joe",
+        "age": 25,
+        "gender": "male",
+        "latitude" : 43,
+        "longitude": -81.2,
+        "contact": "666-666-6666"
+    }
+]
