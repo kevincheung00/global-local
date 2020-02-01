@@ -8,30 +8,48 @@ import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
 import About from './components/about'
 
-// const App = () => {
-//   const APP_ID = "a36541af";
-//   const APP_KEY = "b8929d43d1f37d1d8545a937c4ec6a36";
-//
-//   return(
-//     <div className="App">
-//       <h1>Global Local</h1>
-//       <FirstComponent displaytext="Kevin"/>
-//     </div>
-//   )
-// }
+const date = "January 1st"
 
-class App extends Component {
+const tourguide_data = [
+  {
+    name: "Kevin Cheung",
+    age: 19,
+    rating: 5
+
+  },
+
+  {
+    name: "Jason Kim",
+    age: 19,
+    rating: 5
+  },
+
+  {
+    name: "Alvina Lin",
+    age: 19,
+    rating: 5
+  }
+
+]
+
+class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+    
+    }
+}
+  
+  
   render() {
-    // return (
-    //         <Router history={hashHistory}>
-    //         <Route path='/' component={Home} />
-    //         <Route path='/address' component={Address} />
-    //         </Router>
-    //       )
       return(
         <div className="App">
           <h1>Global Local</h1>
+          
+          
           <About />
+          <Map />
+
         </div>
       )
   }}
