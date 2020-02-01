@@ -3,10 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from "react"
 import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { hashRouter } from "react-router-dom"
 import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
 import About from './components/about'
+import Navibar from './components/navbar'
 
 // const App = () => {
 //   const APP_ID = "a36541af";
@@ -30,8 +32,8 @@ class App extends Component {
     //       )
       return(
         <div className="App">
-          <h1>Global Local</h1>
-          <About />
+          <Navibar />
+          <Map />
         </div>
       )
   }}
