@@ -6,12 +6,13 @@ import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 import { hashRouter } from "react-router-dom"
 import Map from './components/map'
 import FirstComponent from "./components/firstComponent"
+import About from './components/about'
 
 // const App = () => {
 //   const APP_ID = "a36541af";
 //   const APP_KEY = "b8929d43d1f37d1d8545a937c4ec6a36";
 //
-//   return(a
+//   return(
 //     <div className="App">
 //       <h1>Global Local</h1>
 //       <FirstComponent displaytext="Kevin"/>
@@ -21,18 +22,18 @@ import FirstComponent from "./components/firstComponent"
 
 class App extends Component {
   render() {
-    return (
-            <Router history={hashHistory}>
-            <Route path='/' component={Home} />
-            <Route path='/address' component={Address} />
-            </Router>
-          )
-      // return(
-      //   <div className="App">
-      //     <h1>Global Local</h1>
-      //     <Map />
-      //   </div>
-      // )
+    // return (
+    //         <Router history={hashHistory}>
+    //         <Route path='/' component={Home} />
+    //         <Route path='/address' component={Address} />
+    //         </Router>
+    //       )
+      return(
+        <div className="App">
+          <h1>Global Local</h1>
+          <About />
+        </div>
+      )
   }}
 
 const Home = () => <h1>Hello from Home!</h1>
