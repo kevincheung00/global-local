@@ -6,7 +6,8 @@ import './App.css';
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
-import { Form, Button } from 'react-bootstrap';
+import travelGuy from './assets/BACKGROUNDDD.PNG';
+import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 
@@ -52,7 +53,11 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
+<<<<<<< HEAD
         view: 'splash',
+=======
+        view: 'questionaire2',
+>>>>>>> 8c936e326c7e24484011f5902f77812375b1ec46
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -94,10 +99,42 @@ class App extends React.Component {
 
         else if (view === 'login')
             return this.loginscreen();
-
+        else if (view === 'questionaire2')
+            return this.questionaire2();
         else if (view === 'touristProfile')
             return this.touristProfile();
     };
+
+    questionaire2 = () => (
+        <div className= 'questionaire'>
+            <h1 style={{textAlign: "left"}}>What's next on your bucketlist</h1>
+            <div className= 'travelGuy'>
+                <img src={travelGuy} style={{position: "fixed",left: "15%",top: "25%"}}/>
+            </div>
+            <div>
+                <Form>
+                    <Form.Group controlId="formBasicPassword" style={{position: "fixed",left: "50%",top: "30%"}}>
+                        <Form.Label>City, Province, Country</Form.Label>
+                        <Form.Control type="username" placeholder="Toronto" size="lg"/>
+                    </Form.Group>
+                
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "40%"}}>
+                        <Form.Label>From</Form.Label>
+                        <Form.Control type="password" placeholder="01/10/2020" size="lg"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "50%"}}>
+                        <Form.Label>To</Form.Label>
+                        <Form.Control type="password" placeholder="01/16/2020"  size="lg"/>
+                    </Form.Group>
+
+                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}}>
+                    Submit
+                    </Button>
+                </Form>
+            </div>
+        </div>
+    )
 
     loginscreen = () => (
         <div className="signup">
@@ -109,12 +146,12 @@ class App extends React.Component {
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="username" placeholder="Username" />
+                        <Form.Control type="username" placeholder="fpan25" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="*********" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
