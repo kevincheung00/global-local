@@ -74,7 +74,7 @@ class App extends React.Component {
         <React.Fragment>
             <div className='header'>
                 <h1>Global Local{this.state.user || ''}</h1>
-                <img src={Logo} alt="Global Local" height="20px"/>
+                <img src={Logo} alt="Global Local" height="50px" align="top"/>
 
             </div>
 
