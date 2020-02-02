@@ -4,7 +4,8 @@ import './App.css';
 // import FirstComponent from "./components/firstComponent"
 // import About from './components/about'
 // import Navibar from './components/navbar'
-import Logo from './assets/MAP.png';
+import Logo from './assets/MAP.PNG';
+import girl from './assets/GIRL.PNG';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
@@ -100,9 +101,18 @@ class App extends React.Component {
         if (view === 'viewing')
             return this.browsingTweetsScreen();
 
-        if (view === 'tweeting')
+        else if (view === 'tweeting')
             return this.sendTweetScreen();
+        else if (view === 'login')
+            return this.loginscreen();
     };
+
+    loginscreen = () => (
+        <div className='girlImg'>
+            <img src={girl} alt=""/>
+        </div>
+        
+    );
 
     splashScreen = () => (
         <form onSubmit={this.login}>
