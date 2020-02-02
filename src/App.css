@@ -69,13 +69,19 @@ html, body {
 
 .questionaire{
     position: fixed;
-    width: 25%;
+    width: 50%;
+    font-family: "Open Sans";
     top: 20%;
-    left: 37%;
+    left: 30%;
     padding: 10px, 10px, 10px, 10px;
     border-radius: 3px;
 }
 
+.travelGuy img{
+  top: 20%;
+  right: 60%;
+  float: left;
+}
 .splashBackground {
     height: 100vh;
     width: 100vh;

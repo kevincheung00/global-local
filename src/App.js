@@ -6,7 +6,8 @@ import './App.css';
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
-import { Form, Button } from 'react-bootstrap';
+import travelGuy from './assets/BACKGROUNDDD.PNG';
+import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 
@@ -102,16 +103,38 @@ class App extends React.Component {
             return this.loginscreen();
         else if (view === 'questionaire2')
             return this.questionaire2();
-
-
         else if (view === 'touristProfile')
             return this.touristProfile();
     };
 
     questionaire2 = () => (
         <div className= 'questionaire'>
-            <h1 style={{textAlign: "center"}}>LOGIN</h1>
-            <h3 style={{textAlign: "center"}}>CONTINUE TO AMAZE ME</h3>
+            <h1 style={{textAlign: "left"}}>What's next on your bucketlist</h1>
+            <div className= 'travelGuy'>
+                <img src={travelGuy} style={{position: "fixed",left: "15%",top: "25%"}}/>
+            </div>
+            <div>
+                <Form>
+                    <Form.Group controlId="formBasicPassword" style={{position: "fixed",left: "50%",top: "30%"}}>
+                        <Form.Label>City, Province, Country</Form.Label>
+                        <Form.Control type="username" placeholder="Toronto" size="lg"/>
+                    </Form.Group>
+                
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "40%"}}>
+                        <Form.Label>From</Form.Label>
+                        <Form.Control type="password" placeholder="01/10/2020" size="lg"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "50%"}}>
+                        <Form.Label>To</Form.Label>
+                        <Form.Control type="password" placeholder="01/16/2020"  size="lg"/>
+                    </Form.Group>
+
+                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}}>
+                    Submit
+                    </Button>
+                </Form>
+            </div>
         </div>
     )
 
