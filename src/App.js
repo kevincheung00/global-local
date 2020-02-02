@@ -436,11 +436,11 @@ class App extends React.Component {
                     </Form.Group>
 
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Become a Tourist" />
+                        <Form.Check type="checkbox" label="Become a Tourist" checked= 'true'/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Become a Tour Guide" checked= 'true'/>
+                        <Form.Check type="checkbox" label="Become a Tour Guide"/>
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
@@ -536,32 +536,36 @@ class App extends React.Component {
             fontWeight:700,
             padding: 20
         }}>Tourist Profile</h1>
-
         <div className= 'profile-pic'>
             <img src={profile}/>
         </div>
 
         <div className="touristProfile">
+        <Form>
             <h2>Contact Information</h2>
-            <h3 style={{
-                color: "gray"
-            }}>Fland Pan</h3>
+            <Form.Group>
+                <Form.Control padding type="text" size='lg'
+                placeholder="(416)123-4565" />
+            </Form.Group>
             <br></br>
             <h2>Disabilities/Special Needs</h2>
-            <h3 style = {{
-                color: "gray"
-            }}>None</h3>
+            <Form.Group>
+                <Form.Control type="text" size='lg'
+                placeholder="visually impaired" />
+            </Form.Group>
             <br></br>
             <h2>Dream Destination</h2>
-            <h3 style = {{
-                color: "gray"
-            }}>Toronto</h3>
+            <Form.Group>
+                <Form.Control type="text" size='lg'
+                placeholder="Toronto" />
+            </Form.Group>
             <br></br>
             <h2>Language(s)</h2>
-            <h3 style = {{
-                color: "gray"
-            }}>English, Chinese</h3>
-
+            <Form.Group>
+                <Form.Control type="text" size='lg'
+                placeholder="English, Chinese" />
+            </Form.Group>
+        </Form>
             <br></br>
             <Form onSubmit={this.nextScreen}>
                 <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
