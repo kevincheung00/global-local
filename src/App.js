@@ -52,7 +52,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'touristProfile',
+        view: 'survey',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -103,6 +103,9 @@ class App extends React.Component {
 
         else if (view === 'touristProfile')
             return this.touristProfile();
+
+        else if (view == "survey")
+            return this.surveyScreen();
     };
 
     loginscreen = () => (
@@ -203,6 +206,56 @@ class App extends React.Component {
                     </Button>
                 </Form>
             </div>
+        </div>
+    );
+
+    surveyScreen = () => (
+        <div className="survey">
+            <h1 style={{ textAlign: "center" }}>Who Are You?</h1>
+            <h5 style={{ textAlign: "center" }}>We will match you with a professional guide tailor to your wants</h5><br />
+            <form action="/action_page.php" >
+                <p style={{ textAlign: "center" }}>Outdoor or Indoor</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+                
+                <p style={{ textAlign: "center" }}>Urban or Rural</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Nature or Technology</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Food or Shopping</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Extrovert or Introvert</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+                
+                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
+            </form>
         </div>
     );
 
