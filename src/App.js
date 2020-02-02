@@ -8,9 +8,7 @@ import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import splashBackground from './assets/Capture.PNG'
-
-
+import splashBackground from './assets/Capture.PNG';
 
 const date = "January 1st"
 
@@ -62,7 +60,6 @@ class App extends React.Component {
       }
     }
   
-  
     render() {
         return(
             <div className="all">
@@ -112,8 +109,8 @@ class App extends React.Component {
             <div>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="email" placeholder="Email" />
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="username" placeholder="Username" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
@@ -156,27 +153,38 @@ class App extends React.Component {
                 <Form>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Username" />
+                        <Form.Control type="text" 
+                        placeholder="fpan25" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="email" placeholder="Email" />
+                        <Form.Control type="email" 
+                        placeholder="fpan25@uwo.ca" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" 
+                        placeholder="*******" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasic">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control type="name" 
+                        placeholder="Fland Pan"/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasic">
                         <Form.Label>Age</Form.Label>
-                        <Form.Control type="number" placeholder="Age" />
+                        <Form.Control type="number" 
+                        placeholder="19"/>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Location</Form.Label>
-                        <Form.Control type="text" placeholder="Location" />
+                        <Form.Control type="text" 
+                        placeholder="London" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicCheckbox">
@@ -184,7 +192,7 @@ class App extends React.Component {
                     </Form.Group>
 
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Become a Tour Guide" />
+                        <Form.Check type="checkbox" label="Become a Tour Guide" checked= 'true'/>
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
