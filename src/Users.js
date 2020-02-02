@@ -49,4 +49,11 @@ class Tourist extends User {
     }
 }
 
-export default User;
+let addTourist = function(username, password, email, newName, newAge, newLocation){
+    return new Tourist(username, password, email, newName, newAge, newLocation);
+}
+
+module.exports = {
+    touristClass: Tourist,
+    addTouristMethod: addTourist
+};
