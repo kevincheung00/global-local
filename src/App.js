@@ -103,6 +103,7 @@ class App extends React.Component {
         <div className='girlImg'>
             <img src={girl} alt=""/>
         </div>
+        
     );
 
     splashScreen = () => (

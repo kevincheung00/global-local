@@ -43,8 +43,4 @@ class User {
     }
 }
 
-class Tourist extends User{
-    constructor()
-}
-
 export default User;

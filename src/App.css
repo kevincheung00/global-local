@@ -1,3 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.all {
+  height: 100vh;
+  width: 100%;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .button {
     background-color: blue; /* Green */
     border: none;
@@ -10,11 +28,13 @@
     cursor: pointer;
   }
   
-  .container {
+  /* .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
   }
+  } */
   
   .text-input {
     width: 200px;
@@ -26,10 +46,17 @@
   
   .header {
     background-color: #ADDCD6;
-    padding: 20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+
+
+    /* padding: 20px; */
+    position: relative;
     height: 100px;
     font-size: 20px;
-    text-align: left
+    text-align: left;
+    color: #177379;
   }
 
   .logo img {
@@ -37,9 +64,9 @@
   }
 
   .girlImg{
-    position: relative;
+    position: absolute;
     width: 411px;
     height: 306px;
     left: 524px;
-    top: 186px;
+    top: 130px;
   }
