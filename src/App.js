@@ -117,7 +117,7 @@ class App extends React.Component {
         else if (this.state.view == "signup")
             nextScreen = "login"
 
-        else if (this.state.view == "signup")
+        else if (this.state.view == "login")
             nextScreen = "touristProfile"
         
         this.setState({view: nextScreen})
