@@ -313,7 +313,7 @@ class App extends React.Component {
             <Map />
             <br></br>
             <Form onSubmit={this.nextScreen}>
-                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg" style={{position: "fixed",left: "55%",top: "60%"}}>Continue</Button>
+                <Button variant="primary" size="lg" type="submit" className="submit" style={{position: "fixed",left: "50%",top: "88%"}}>Continue</Button>
             </Form>   
         </div>
     );
