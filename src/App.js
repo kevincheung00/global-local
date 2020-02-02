@@ -7,6 +7,7 @@ import './App.css';
 import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
 import travelGuy from './assets/BACKGROUNDDD.PNG';
+import refreshSHIT from './assets/RefreshShit.png';
 import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
@@ -53,7 +54,11 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
+<<<<<<< HEAD
         view: 'splash',
+=======
+        view: 'questionaire3',
+>>>>>>> d5dcf78a130cf4664e2b8cc79448639f24703615
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -76,7 +81,7 @@ class App extends React.Component {
             <div className='header'>
                 <div className="logo">
                     <img src={Logo} alt="Global Local" height="60px"/>
-                    <h1>GLOBAL LOCAL</h1>
+                    <h1>GLOBAL LOCAL{this.state.user || ''}</h1>
                 </div>
             </div>
 
@@ -86,19 +91,27 @@ class App extends React.Component {
     );
 
     body = () => {
-        const {view} = this.state;
+        const {view, allTweets} = this.state;
+        console.log(allTweets);
         if (view === 'splash')
             return this.splashScreen();
 
         if (view === 'signup')
             return this.signupScreen();
 
+        if (view === 'viewing')
+            return this.browsingTweetsScreen();
+
+        else if (view === 'tweeting')
+            return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
         else if (view === 'questionaire2')
             return this.questionaire2();
         else if (view === 'touristProfile')
             return this.touristProfile();
+        else if (view === 'questionaire3')
+            return this.questionaire3();
     };
 
     questionaire2 = () => (
@@ -132,6 +145,16 @@ class App extends React.Component {
         </div>
     )
 
+    questionaire3 = () => (
+        <div>
+            <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
+            <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
+            to match your preferences with a proffessional Tour Guide tailored to your needs and wants, based
+            on your availability</h2>
+            <img src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
+        </div>
+    )
+
     loginscreen = () => (
         <div className="signup">
             <img src={girl} style={{ width: "100%" }}/>
@@ -158,6 +181,7 @@ class App extends React.Component {
         </div>
     );
 
+<<<<<<< HEAD
     nextScreen = (event) => {
         let nextScreen = ""
         if (this.state.view == "splash")
@@ -176,12 +200,23 @@ class App extends React.Component {
     }
 
 
+=======
+>>>>>>> d5dcf78a130cf4664e2b8cc79448639f24703615
     splashScreen = () => (
         <div className="splashBackground">
-                <form onSubmit={this.nextScreen}>
-                    <input className='button' type="submit" value="Submit"></input>
-                </form>
-            
+            {/* <form onSubmit={this.login}> */}
+                {/* <h1>Username:</h1>
+                <input
+                    className='text-input'
+                    type="text"
+                    name="username"
+                    value={this.state.usernameInput}
+                    onChange={e => this.setState({usernameInput: e.target.value})}
+                /> */}
+                
+
+                <input className='button' type="submit" value="Submit"/>
+            {/* </form> */}
                         
         </div>
     );
