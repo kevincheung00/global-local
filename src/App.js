@@ -261,7 +261,7 @@ class App extends React.Component {
                     </Card.Text>
                     <Form onSubmit={this.nextScreen}>
                         <Button type="submit" style= {{position: "fixed", left: "78%", top: "66%", opacity: '0', height: "240px", width: "344px"}}></Button>
-                    </Form>
+                    </Form>ƒ
                     <Card.Img variant="top" src= {Alvina} />
                     </Card.Body>
                     <Card.Footer>
@@ -325,12 +325,12 @@ class App extends React.Component {
                 
                     <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "40%"}}>
                         <Form.Label>From</Form.Label>
-                        <Form.Control type="password" placeholder="01/10/2020" size="lg"/>
+                        <Form.Control type="password" placeholder="02/10/2020" size="lg"/>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "50%"}}>
                         <Form.Label>To</Form.Label>
-                        <Form.Control type="password" placeholder="01/16/2020"  size="lg"/>
+                        <Form.Control type="password" placeholder="02/16/2020"  size="lg"/>
                     </Form.Group>
 
                     <br></br>
@@ -513,7 +513,7 @@ class App extends React.Component {
                 <h1>You Selected Leanne Li!</h1>
                 <h4 style={{ textAlign: "center" }}>Ranking 5/5</h4>
                 <br />
-                <h3 style={{ textAlign: "center" }}>Niagara Personalized Day Tour</h3>
+                <h3 style={{ textAlign: "center" }}>Toronto Personalized Day Tour</h3>
                 <h3 style={{ textAlign: "center" }}>8 - 11 Hours</h3>
                 <br />
                 <p>During my time as your tour guide, I will share with you stories, facts, history, scenic highlights, etc about Niagara Falls in a humorous and educational way.</p>
