@@ -53,11 +53,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-<<<<<<< HEAD
         view: 'splash',
-=======
-        view: 'questionaire2',
->>>>>>> 8c936e326c7e24484011f5902f77812375b1ec46
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -143,7 +139,7 @@ class App extends React.Component {
             <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
             <br />
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="username" placeholder="fpan25" />
@@ -170,6 +166,9 @@ class App extends React.Component {
         else if (this.state.view == "signup")
             nextScreen = "login"
 
+        else if (this.state.view == "signup")
+            nextScreen = "touristProfile"
+        
         this.setState({view: nextScreen})
         this.header()
         this.body()
@@ -190,7 +189,7 @@ class App extends React.Component {
     signupScreen = () => (
         <div className="signup">
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" 
