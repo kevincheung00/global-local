@@ -4,7 +4,7 @@ import './App.css';
 // import FirstComponent from "./components/firstComponent"
 // import About from './components/about'
 // import Navibar from './components/navbar'
-import Logo from './assets/MAP.PNG';
+import Logo from './assets/MAP.png';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
@@ -54,7 +54,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'signup',
+        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''

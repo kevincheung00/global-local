@@ -28,14 +28,6 @@ html, body {
     cursor: pointer;
   }
   
-  /* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  } */
-  
   .text-input {
     width: 200px;
   }
@@ -57,6 +49,7 @@ html, body {
     font-size: 20px;
     text-align: left;
     color: #177379;
+    padding: 20px;
   }
 
   .logo img {
@@ -81,7 +74,7 @@ html, body {
   
   .splashBackground {
       float: left;
-      position: relative;
-      height: "2px"; 
-      width:"2000px";
+      /* position: relative; */
+      height: 100%; 
+      width:100%;
   }
