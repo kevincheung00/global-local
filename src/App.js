@@ -69,21 +69,19 @@ class App extends React.Component {
         )
     }
 
-    header = () => {
+    header = () => (
+        
         <React.Fragment>
             <div className='header'>
                 <h1>Global Local{this.state.user || ''}</h1>
-
-            </div>
-            <div>
-                <img src={Logo} alt="Global Local"/>
+                <img src={Logo} alt="Global Local" height="20px"/>
 
             </div>
 
 
         </React.Fragment>
 
-    };
+    );
 
     body = () => {
         const {view, allTweets} = this.state;
