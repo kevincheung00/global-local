@@ -8,10 +8,11 @@ import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
 import travelGuy from './assets/BACKGROUNDDD.PNG';
 import refreshSHIT from './assets/RefreshShit.png';
-import { Form, Button, Col } from 'react-bootstrap';
+import { Form, Button, Col , CardGroup, Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
-
+import Leanne from './assets/Leanne.png';
+import Keven from './assets/Keven.jpg';
 
 const tourguide_data = [
   {
@@ -54,7 +55,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'questionaire3',
+        view: 'tourGuideSelection',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -91,13 +92,10 @@ class App extends React.Component {
         console.log(allTweets);
         if (view === 'splash')
             return this.splashScreen();
-
         if (view === 'signup')
             return this.signupScreen();
-
         if (view === 'viewing')
             return this.browsingTweetsScreen();
-
         else if (view === 'tweeting')
             return this.sendTweetScreen();
         else if (view === 'login')
@@ -108,7 +106,82 @@ class App extends React.Component {
             return this.touristProfile();
         else if (view === 'questionaire3')
             return this.questionaire3();
+        else if (view === 'tourGuideSelection')
+            return this.tourGuideSelection();
+        
     };
+
+    tourGuideSelection = () => (
+        <def>
+            <h1 fontWeight= "bold" style= {{position: "fixed",left: "20%",top: "15%", fontWeight: "bold"}}>Based on your preferences, we found...</h1>
+            <CardGroup style= {{position: "fixed",top: "25%"}}>
+                <Card>
+                    <Card.Body>
+                    <Card.Title><center><b>Leanne Li</b></center></Card.Title>
+                    <Card.Text>
+                    <b>Location: </b>Toronto, Ontario, Canada Ranking (5/5) <br></br>
+                    <b>Languages:</b> English (fluent), Mandarin (intermediate) <br></br>
+                    <b>Biography:</b> Leanne is a member of the Canadian Tour Guide Association since 2017, 
+                    and she has experience working with people with intellectually disabled people 
+                    ranging from age 6 to 30 with trainings provided by Best Buddies. Welcome to Toronto!!! <br></br>
+                    <b>Credentials:</b> Extensive work experience in Toronto, Mississauga, and other cities within the GTA area.
+                    </Card.Text>
+                    <Button style= {{position: "fixed", left: "2%", top: "64%", opacity: '0', height: "250px", width: "344px"}}></Button>
+                    <Card.Img variant='bottom' src={Leanne} sizes='100px160'/>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title><center><b>Kevin Cheung</b></center></Card.Title>
+                    <Card.Text>
+                    <b>Location: </b>Toronto, Ontario, Canada Ranking (5/5) <br></br>
+                    <b>Languages:</b> English (fluent), Cantonese (intermediate) <br></br>
+                    <b>Biography:</b> Keven is a university student who works at Global 
+                    Local part-time. He has experience touring around the University of 
+                    Toronto and surrounding areas. <br></br>
+                    <b>Credentials:</b> Professionally trained by Best Buddies and received best touring beginner of the year
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Card title</Card.Title>
+                    <Card.Text>
+                        This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to
+                        show that equal height action.
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Card title</Card.Title>
+                    <Card.Text>
+                        This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to
+                        show that equal height action.
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer>
+                </Card>
+            </CardGroup>
+
+        </def>
+    )
 
     questionaire2 = () => (
         <div className= 'questionaire'>
