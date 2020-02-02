@@ -20,16 +20,14 @@
     width: 200px;
   }
   
-  .tweet {
-  
-  }
-  
   .tweet__user {
     font-family: "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace;
   }
   
   .header {
     background-color: #ADDCD6;
-    padding: 50px;
-    height: 1px;
+    padding: 20px;
+    height: 100px;
+    font-size: 20px;
+    
   }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Map from './components/map'
-import FirstComponent from "./components/firstComponent"
-import About from './components/about'
-import Navibar from './components/navbar'
+// import Map from './components/map'
+// import FirstComponent from "./components/firstComponent"
+// import About from './components/about'
+// import Navibar from './components/navbar'
+import Logo from './assets/MAP.png';
 
 
 const date = "January 1st"
@@ -69,16 +69,26 @@ class App extends React.Component {
         )
     }
 
-    header = () => (
-        <div className='header'>
-            <h1>Global Local{this.state.user || ''}</h1>
-        </div>
-    );
+    header = () => {
+        <React.Fragment>
+            <div className='header'>
+                <h1>Global Local{this.state.user || ''}</h1>
+
+            </div>
+            <div>
+                <img src={Logo} alt="Global Local"/>
+
+            </div>
+
+
+        </React.Fragment>
+
+    };
 
     body = () => {
         const {view, allTweets} = this.state;
         console.log(allTweets);
-        if (view === 'login')
+        if (view === 'splash')
             return this.splashScreen();
 
         if (view === 'viewing')
