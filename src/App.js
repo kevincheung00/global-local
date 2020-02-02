@@ -108,10 +108,25 @@ class App extends React.Component {
     };
 
     loginscreen = () => (
-        <div className='girlImg'>
-            <img src={girl} alt=""/>
+        <div className="signup">
+            <div>
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email Address</Form.Label>
+                        <Form.Control type="email" placeholder="Email" />
+                    </Form.Group>
+                
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
+                    Submit
+                    </Button>
+                </Form>
+            </div>
         </div>
-        
     );
 
     splashScreen = () => (
@@ -137,7 +152,7 @@ class App extends React.Component {
 
     signupScreen = () => (
         <div className="signup">
-            <div className="signup-form">
+            <div>
                 <Form>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
@@ -145,8 +160,8 @@ class App extends React.Component {
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Label>Email Address</Form.Label>
+                        <Form.Control type="email" placeholder="Email" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
