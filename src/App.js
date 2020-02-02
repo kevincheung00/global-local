@@ -52,7 +52,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'login',
+        view: 'questionaire2',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -100,7 +100,17 @@ class App extends React.Component {
             return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
+        else if (view === 'questionaire2')
+            return this.questionaire2();
+
     };
+
+    questionaire2 = () => (
+        <div className= 'questionaire'>
+            <h1 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>LOGIN</h1>
+            <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
+        </div>
+    )
 
     loginscreen = () => (
         <div className="signup">
@@ -112,12 +122,12 @@ class App extends React.Component {
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="username" placeholder="Username" />
+                        <Form.Control type="username" placeholder="fpan25" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="*********" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
