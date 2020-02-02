@@ -7,6 +7,7 @@ import './App.css';
 import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
 import travelGuy from './assets/BACKGROUNDDD.PNG';
+import refreshSHIT from './assets/RefreshShit.png';
 import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
@@ -53,7 +54,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'questionaire2',
+        view: 'questionaire3',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -105,6 +106,8 @@ class App extends React.Component {
             return this.questionaire2();
         else if (view === 'touristProfile')
             return this.touristProfile();
+        else if (view === 'questionaire3')
+            return this.questionaire3();
     };
 
     questionaire2 = () => (
@@ -135,6 +138,16 @@ class App extends React.Component {
                     </Button>
                 </Form>
             </div>
+        </div>
+    )
+
+    questionaire3 = () => (
+        <div>
+            <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
+            <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
+            to match your preferences with a proffessional Tour Guide tailored to your needs and wants, based
+            on your availability</h2>
+            <img src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
         </div>
     )
 
