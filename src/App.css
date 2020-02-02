@@ -6,6 +6,17 @@ html, body {
     padding: 0;
   }
 
+  .marker-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .marker-btn img {
+    width: 20px;
+    height: 20px;
+  } 
+
 .all {
     height: 100vh;
     width: 100%;
@@ -121,4 +132,21 @@ input[type="radio"]{
     top: 30%;
     right: 65%;
     height: 100%;
+}
+
+.plan-trip {
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    width: 90%;
+    display: flex;
+}
+
+.trip-describe {
+    width: 500px;
+    padding: 0px 20px;
+}
+
+.trip-pic {
+
 }

@@ -28,5 +28,35 @@
         "latitude" : 43.06,
         "longitude": -81.03,
         "contact": "565-243-4455"
+    },
+    {
+        "id": 4,
+        "firstName": "Josh",
+        "lastName": "Joe",
+        "age": 25,
+        "gender": "male",
+        "latitude" : 43.08,
+        "longitude": -79.07,
+        "contact": "666-666-6666"
+    },
+    {
+        "id": 5,
+        "firstName": "Sarah",
+        "lastName": "Poe",
+        "age": 34,
+        "gender": "female",
+        "latitude" : 43.04,
+        "longitude": -79.14,
+        "contact": "726-666-8888"
+    },
+    {
+        "id": 6,
+        "firstName": "Lucie",
+        "lastName": "Smiths",
+        "age": 68,
+        "gender": "male",
+        "latitude" : 43,
+        "longitude": -79.0,
+        "contact": "565-256-4455"
     }
 ]

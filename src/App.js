@@ -17,6 +17,8 @@ import profile from './assets/PROFILE-PIC.PNG'
 import Jason from './assets/Jason.png';
 import Alvina from './assets/Alvina.png';
 import credit from './assets/CreditCards.png';
+import Calendar from 'react-calendar'
+
 
 
 const tourguide_data = [
@@ -60,7 +62,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'paymentScreen',
+        view: 'planTrip',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -118,6 +120,10 @@ class App extends React.Component {
 
         else if (view == "questionnaire1")
             return this.questionnaire1();
+
+        else if (view == "planTrip")
+            return this.planTrip();
+            
         else if (view === 'finalScreen')
             return this.finalScreen();
         else if (view === 'paymentScreen')
@@ -347,9 +353,8 @@ class App extends React.Component {
     splashScreen = () => (
         <div className="splashBackground">
             <Map />
-            <br></br>
             <Form onSubmit={this.nextScreen}>
-                <Button variant="primary" size="lg" type="submit" className="submit" style={{position: "fixed",left: "50%",top: "88%"}}>Continue</Button>
+                <Button variant="primary" size="lg" type="submit" className="submit" style={{position: "fixed", left: "47%", top: "95%"}}>Continue</Button>
             </Form>   
         </div>
     );
@@ -424,35 +429,35 @@ class App extends React.Component {
                 <p></p>
                 
                 <p style={{ textAlign: "center" }}>Urban or Rural</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Urban" value="male" /> 1
+                <input type="radio" name="Urban" value="female" /> 2
+                <input type="radio" name="Urban" value="other" /> 3
+                <input type="radio" name="Urban" value="other" /> 4
+                <input type="radio" name="Urban" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Nature or Technology</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Nature" value="male" /> 1
+                <input type="radio" name="Nature" value="female" /> 2
+                <input type="radio" name="Nature" value="other" /> 3
+                <input type="radio" name="Nature" value="other" /> 4
+                <input type="radio" name="Nature" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Food or Shopping</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Food" value="male" /> 1
+                <input type="radio" name="Food" value="female" /> 2
+                <input type="radio" name="Food" value="other" /> 3
+                <input type="radio" name="Food" value="other" /> 4
+                <input type="radio" name="Food" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Extrovert or Introvert</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Extrovert" value="male" /> 1
+                <input type="radio" name="Extrovert" value="female" /> 2
+                <input type="radio" name="Extrovert" value="other" /> 3
+                <input type="radio" name="Extrovert" value="other" /> 4
+                <input type="radio" name="Extrovert" value="other" /> 5
                 <p></p>
                 
                 <br></br>
@@ -460,6 +465,31 @@ class App extends React.Component {
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
                 </Form>
             </form>
+        </div>
+    );
+
+    planTrip = () => (
+        <div className="plan-trip">
+            <div className="trip-pic">
+                <img src={Leanne} style={{ width: "250px", height: "250px" }}/>
+            </div>
+            <div className="trip-describe">
+                <h1>You Selected Leanne Li!</h1>
+                <h4 style={{ textAlign: "center" }}>Ranking 5/5</h4>
+                <br />
+                <h3 style={{ textAlign: "center" }}>Niagara Personalized Day Tour</h3>
+                <h3 style={{ textAlign: "center" }}>8 - 11 Hours</h3>
+                <br />
+                <p>During my time as your tour guide, I will share with you stories, facts, history, scenic highlights, etc about Niagara Falls in a humorous and educational way.</p>
+                <p>All the attractions (The Hornblower Cruise in Summer, The Helicopter, The Skylon Tower, Journey Behind the Falls, etc) will be planned <b>based on the preferences you submitted earlier.</b></p>
+            </div>
+            <div className="calendar">
+                <Calendar />
+                <br />
+                <Form onSubmit={this.nextScreen}>
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Book Now!</Button>
+                </Form>
+            </div>
         </div>
     );
 

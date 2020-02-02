@@ -11,8 +11,8 @@ class Map extends Component {
     super(props);
     this.state = {
       viewport: {
-        latitude: 43,
-        longitude: -81.2,
+        latitude: 43.1,
+        longitude: -79.02,
         zoom: 10,
         bearing: 0,
         pitch: 0
@@ -28,7 +28,7 @@ class Map extends Component {
             <MapGL
                 {...this.state.viewport}
                 width="100vw"
-                height="70vh"
+                height="80vh"
                 mapStyle="mapbox://styles/hbooboo/ck63y1z7v04rq1inwxtcewbzu"
                 onViewportChange={viewport => this.setState({viewport})}
                 mapboxApiAccessToken={MAPBOX_TOKEN}>
