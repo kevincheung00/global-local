@@ -52,7 +52,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'login',
+        view: 'touristProfile',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -101,6 +101,9 @@ class App extends React.Component {
             return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
+
+        else if (view === 'touristProfile')
+            return this.touristProfile();
     };
 
     loginscreen = () => (
@@ -131,7 +134,7 @@ class App extends React.Component {
 
     splashScreen = () => (
         <div className="splashBackground">
-            <form onSubmit={this.login}>
+            {/* <form onSubmit={this.login}> */}
                 {/* <h1>Username:</h1>
                 <input
                     className='text-input'
@@ -143,7 +146,7 @@ class App extends React.Component {
                 
 
                 <input className='button' type="submit" value="Submit"/>
-            </form>
+            {/* </form> */}
                         
         </div>
     );
@@ -192,6 +195,47 @@ class App extends React.Component {
             </div>
         </div>
     );
+
+    touristProfile = () => (
+        <React.Fragment>
+        
+        <h1 style={{
+            fontWeight:700,
+            padding: 20
+        }}>Tourist Profile</h1>
+
+        <div className="touristProfile">
+        <Form>
+            <Form.Group>
+                <Form.Label>Contact Information</Form.Label>
+                <Form.Control type="text" placeholder="Kevin Cheung" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>Disabilities/Special Needs</Form.Label>
+                <Form.Control type="email" placeholder="admin@kevincheung.com" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+                <Form.Label>Dream Destination</Form.Label>
+                <Form.Control type="password" placeholder="********" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasic">
+                <Form.Label>Languages</Form.Label>
+                <Form.Control type="number" placeholder="19" />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
+            Continue
+            </Button>
+        </Form>
+        </div>
+
+        </React.Fragment>
+    );
+
+
 
     }
 
