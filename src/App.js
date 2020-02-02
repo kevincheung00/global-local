@@ -12,8 +12,11 @@ import { Form, Button, Col , CardGroup, Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 import Leanne from './assets/Leanne.png';
-import Keven from './assets/Keven.jpg';
+import Kevin from './assets/Keven.jpg';
 import profile from './assets/PROFILE-PIC.PNG'
+import Jason from './assets/Jason.png';
+import Alvina from './assets/Alvina.png';
+
 
 
 const tourguide_data = [
@@ -126,7 +129,7 @@ class App extends React.Component {
                     <Card.Body>
                     <Card.Title><center><b>Leanne Li</b></center></Card.Title>
                     <Card.Text>
-                    <b>Location: </b>Toronto, Ontario, Canada Ranking (5/5) <br></br>
+                    <b>Location: </b>Toronto, Ontario, Canada<br></br>
                     <b>Languages:</b> English (fluent), Mandarin (intermediate) <br></br>
                     <b>Biography:</b> Leanne is a member of the Canadian Tour Guide Association since 2017, 
                     and she has experience working with people with intellectually disabled people 
@@ -141,45 +144,54 @@ class App extends React.Component {
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
                     <Card.Body>
                     <Card.Title><center><b>Kevin Cheung</b></center></Card.Title>
                     <Card.Text>
-                    <b>Location: </b>Toronto, Ontario, Canada Ranking (5/5) <br></br>
+                    <b>Location: </b>Toronto, Ontario, Canada<br></br>
                     <b>Languages:</b> English (fluent), Cantonese (intermediate) <br></br>
                     <b>Biography:</b> Keven is a university student who works at Global 
                     Local part-time. He has experience touring around the University of 
                     Toronto and surrounding areas. <br></br>
                     <b>Credentials:</b> Professionally trained by Best Buddies and received best touring beginner of the year
                     </Card.Text>
+                    <Button style= {{position: "fixed", left: "27%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                    <Card.Img variant="top" src= {Kevin} />
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
+                <Card.Body>
+                    <Card.Title><center><b>Jason Kim</b></center></Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to
-                        show that equal height action.
+                    <b>Location: </b>Bowmanville, Ontario, Canada<br></br>
+                    <b>Languages:</b> English (fluent), Korean (fluent) <br></br>
+                    <b>Biography:</b> Jason is a full-time doctor that works with 
+                    disabled people ranging from 18-30. He is also heavily invoeld in 
+                    community volunteers and work at Global Local part-time. <br></br>
+                    <b>Credentials:</b> Professionally trained by Best Buddies and received top 10 Tour Guide of 2019.
                     </Card.Text>
+                    <Button style= {{position: "fixed", left: "52%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                    <Card.Img variant="top" src= {Jason} />
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
                     </Card.Footer>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
+                <Card.Body>
+                    <Card.Title><center><b>Alvina Lin</b></center></Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to
-                        show that equal height action.
+                    <b>Location: </b>Markham, Ontario, Canada<br></br>
+                    <b>Languages:</b> English (fluent), Mandarin (fluent), Cantonese (fluent) <br></br>
+                    <b>Biography:</b> Alvina has volunteered with mentally disabled students for 2 years
+                     with over 600 hours of experience. She is a geography student that LOVES tourism, 
+                     and she will be a great fit if you want an educational trip. <br></br>
+                    <b>Credentials:</b> Professionally trained by Best Buddies and received BEST Tour Guide.
                     </Card.Text>
+                    <Button style= {{position: "fixed", left: "78%", top: "66%", opacity: '0', height: "240px", width: "344px"}}></Button>
+                    <Card.Img variant="top" src= {Alvina} />
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
@@ -188,8 +200,7 @@ class App extends React.Component {
             </CardGroup>
 
         </def>
-    )
-    };
+    );
 
     nextScreen = (event) => {
         let nextScreen = ""
@@ -430,10 +441,5 @@ class App extends React.Component {
 
         </React.Fragment>
     );
-
-
-
-    }
-
-
+        }
 export default App;
