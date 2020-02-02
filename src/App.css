@@ -70,3 +70,25 @@ html, body {
     left: 524px;
     top: 130px;
   }
+  .login {
+    background-color: rgb(206, 200, 200);
+    padding: 10px 10px 10px 10px;
+    vertical-align: middle;
+
+  }
+
+  .signup {
+    position: fixed;
+    width: 25%;
+    top: 20%;
+    left: 40%;
+    padding: 10px, 10px, 10px, 10px;
+    border-radius: 3px;
+  }
+  
+  .splashBackground {
+      float: left;
+      position: relative;
+      height: "2px"; 
+      width:"2000px";
+  }
