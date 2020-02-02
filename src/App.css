@@ -29,5 +29,9 @@
     padding: 20px;
     height: 100px;
     font-size: 20px;
-    
+    text-align: left
+  }
+
+  .logo img {
+    float: left
   }

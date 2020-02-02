@@ -4,7 +4,7 @@ import './App.css';
 // import FirstComponent from "./components/firstComponent"
 // import About from './components/about'
 // import Navibar from './components/navbar'
-import Logo from './assets/MAP.png';
+import Logo from './assets/MAP.PNG';
 
 
 const date = "January 1st"
@@ -73,9 +73,10 @@ class App extends React.Component {
         
         <React.Fragment>
             <div className='header'>
-                <h1>Global Local{this.state.user || ''}</h1>
-                <img src={Logo} alt="Global Local" height="20px"/>
-
+                <div className="logo">
+                    <img src={Logo} alt="Global Local" height="60px"/>
+                    <h1>Global Local{this.state.user || ''}</h1>
+                </div>
             </div>
 
 

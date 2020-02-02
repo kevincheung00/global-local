@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import MapGL, { Marker, Popup } from 'react-map-gl';
 import guides from '../data/guides.json'
 import '../App.css';
