@@ -12,6 +12,7 @@ import { Form, Button, Col , CardGroup, Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 import Leanne from './assets/Leanne.png';
+import Leanne1 from './assets/Leanne1.png';
 import Kevin from './assets/Keven.jpg';
 import profile from './assets/PROFILE-PIC.PNG'
 import Jason from './assets/Jason.png';
@@ -113,8 +114,9 @@ class App extends React.Component {
         else if (view == "survey")
             return this.surveyScreen();
 
-        else if (view == 'questionnaire3')
+        else if (view == 'questionnaire3'){
             return this.questionnaire3();
+        }
 
         else if (view == "questionnaire1")
             return this.questionnaire1();
@@ -163,10 +165,13 @@ class App extends React.Component {
             <h3 style={{position: "fixed",left: "35%",top: "35%"}}><font size='5'>*8 hours</font></h3>
             <h3 font-weight = 'bold' style={{position: "fixed",left: "35%",top: "41%"}}><font size='5'>
                     <b>Discount Code: Enactus Hacks</b><br></br>
-                    <b>Original Price: $200 ($25/hr for 8 hours)</b><br></br>
+                    <b>Original Price: $240 ($30/hr for 8 hours)</b><br></br>
                     <b>Discounted Price: $<u>180</u></b>
                 </font></h3>
             <img src = {credit} style={{position: "fixed",left: "25%",top: "40%"}}></img>
+            <Form onSubmit={this.nextScreen}>
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Confirm</Button>
+                </Form>
         </def>
     )
 
@@ -291,16 +296,18 @@ class App extends React.Component {
         else if (this.state.view == "questionnaire3") {
             nextScreen = "tourGuideSelection"
         }
-
         else if (this.state.view == "tourGuideSelection"){
-            // window.setTimeout(nextScreen(), 3000);
+            nextScreen = "planTrip"
+        }
+        else if (this.state.view == "planTrip"){
+            nextScreen = "paymentScreen"
+        }
+        else if (this.state.view == "paymentScreen"){
             nextScreen = "finalScreen"
         }
         this.setState({view: nextScreen})
         this.header()
         this.body()
-        if (this.state.view == 'tourGuideSelection')
-            setTimeout(nextScreen, 3000);
     }
 
     questionnaire2 = () => (
@@ -334,28 +341,22 @@ class App extends React.Component {
             </div>
         </div>
     )
-
-    // delay = () => (
-    //     window.setTimeout(, 3000)
-    // )
-    
+    sleep = () => {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+          currentDate = Date.now();
+        } while (currentDate - date < 3000);
+        this.nextScreen();
+    }
     questionnaire3 = () => (
-
-        <React.Fragment>
-        <div onclick = {this.nextScreen}>
+        <div>
             <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
             <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
             to match your preferences with a professional Tour Guide tailored to your needs and wants, based
             on your availability</h2>
-            <img src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
+            <img onMouseEnter= {this.sleep} src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
         </div>
-
-
-        </React.Fragment>
-
-        
-
-
     
     )
 
@@ -506,7 +507,7 @@ class App extends React.Component {
     planTrip = () => (
         <div className="plan-trip">
             <div className="trip-pic">
-                <img src={Leanne} style={{ width: "250px", height: "250px" }}/>
+                <img src={Leanne1} style={{ width: "250px", height: "250px" }}/>
             </div>
             <div className="trip-describe">
                 <h1>You Selected Leanne Li!</h1>
