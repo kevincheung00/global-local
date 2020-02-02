@@ -60,7 +60,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'tourGuideSelection',
+        view: 'finalScreen',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -117,9 +117,20 @@ class App extends React.Component {
             return this.tourGuideSelection();
             
         else if (view == "questionnaire1")
-        return this.questionnaire1();
+            return this.questionnaire1();
+        else if (view === 'finalScreen')
+            return this.finalScreen();
         
     };
+
+    finalScreen = () => (
+        <def style={{position: "fixed",left: "5%",top: "15%"}}>
+            <h1 fontWeight= "bold">Booking Confirmed</h1>
+            <h1 style={{position: "fixed",left: "5%",top: "25%", fontWeight: "bold"}}>What's Next?</h1>
+            <h2 style={{position: "fixed",left: "5%",top: "30%"}}>Just sit back and be amazed by <b>Leanne</b>'s personalized tour!</h2>
+
+        </def>
+    )
 
     tourGuideSelection = () => (
         <def>
