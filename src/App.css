@@ -43,7 +43,17 @@
   cursor: pointer;
 }
 
+<<<<<<< Updated upstream
 .marker-btn img {
   width: 20px;
   height: 20px;
 }
+=======
+  .girlImg{
+    position: fixed;
+    width: 411px;
+    height: 306px;
+    left: 200px;
+    top: 0px;
+  }
+>>>>>>> Stashed changes
