@@ -312,7 +312,7 @@ class App extends React.Component {
         <div className="splashBackground">
             <Map />
             <Form onSubmit={this.nextScreen}>
-                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg" style={{ backgroundColor: "B6DBD6"}}>Continue</Button>
+                <Button variant="primary" size="lg" type="submit" className="submit" style={{position: "fixed", left: "47%", top: "95%"}}>Continue</Button>
             </Form>   
         </div>
     );
