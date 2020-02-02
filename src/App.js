@@ -94,7 +94,8 @@ class App extends React.Component {
         const {view} = this.state;
         if (view == "splash")
             return this.splashScreen();
-        if (view === 'signup')
+
+        else if (view == 'signup')
             return this.signupScreen();
         if (view === 'viewing')
             return this.browsingTweetsScreen();
@@ -103,19 +104,18 @@ class App extends React.Component {
         else if (view === 'login')
             return this.loginscreen();
 
-        else if (view == 'questionaire2')
-            return this.questionaire2();
+        else if (view == 'questionnaire2')
+            return this.questionnaire2();
+        
         else if (view == 'touristProfile')
             return this.touristProfile();
 
         else if (view == "survey")
             return this.surveyScreen();
 
-        else if (view == 'questionaire3')
-            return this.questionaire3();
-        else if (view === 'tourGuideSelection')
-            return this.tourGuideSelection();
-            
+        else if (view == 'questionnaire3')
+            return this.questionnaire3();
+
         else if (view == "questionnaire1")
             return this.questionnaire1();
         else if (view === 'finalScreen')
@@ -226,6 +226,12 @@ class App extends React.Component {
 
         else if (this.state.view == "touristProfile")
             nextScreen = "questionnaire1"
+
+        else if (this.state.view == "questionnaire1")
+            nextScreen = "questionnaire2"
+
+        else if (this.state.view == "questionnaire2")
+            nextScreen = "questionnaire3"
         
         this.setState({view: nextScreen})
         this.header()
@@ -233,7 +239,7 @@ class App extends React.Component {
 
     }
 
-    questionaire2 = () => (
+    questionnaire2 = () => (
         <div className= 'questionaire'>
             <h1 style={{textAlign: "left"}}>What's next on your bucketlist</h1>
             <div className= 'travelGuy'>
@@ -256,7 +262,8 @@ class App extends React.Component {
                         <Form.Control type="password" placeholder="01/16/2020"  size="lg"/>
                     </Form.Group>
 
-                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}}>
+                    <br></br>
+                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}} onSubmit={this.nextScreen}>
                     Submit
                     </Button>
                 </Form>
@@ -264,7 +271,7 @@ class App extends React.Component {
         </div>
     )
 
-    questionaire3 = () => (
+    questionnaire3 = () => (
         <div>
             <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
             <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
@@ -277,8 +284,8 @@ class App extends React.Component {
     loginscreen = () => (
         <div className="signup">
             <img src={girl} style={{ width: "100%" }}/>
-            <h1 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>LOGIN</h1>
-            <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
+            <h1 style={{textAlign: "center", fontFamily: "Open Sans"}}>LOGIN</h1>
+            <h3 style={{textAlign: "center", fontFamily: "Open Sans"}}>CONTINUE TO AMAZE ME</h3>
             <br />
             <div>
                 <Form onSubmit={this.nextScreen}>
@@ -304,9 +311,10 @@ class App extends React.Component {
     splashScreen = () => (
         <div className="splashBackground">
             <Map />
-            <form onSubmit={this.nextScreen}>
-                <input className='button' type="submit" value="Submit"/>
-            </form>   
+            <br></br>
+            <Form onSubmit={this.nextScreen}>
+                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg" style={{position: "fixed",left: "55%",top: "60%"}}>Continue</Button>
+            </Form>   
         </div>
     );
 
@@ -316,7 +324,7 @@ class App extends React.Component {
                 <Form onSubmit={this.nextScreen}>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" 
+                        <Form.Control type="text"
                         placeholder="fpan25" />
                     </Form.Group>
 
@@ -370,7 +378,7 @@ class App extends React.Component {
         <div className="survey">
             <h1 style={{ textAlign: "center" }}>Who Are You?</h1>
             <h5 style={{ textAlign: "center" }}>We will match you with a professional guide tailor to your wants</h5><br />
-            <form action="/action_page.php" onSubmit={this.nextScreen} >
+            <form action="/action_page.php" >
                 <p style={{ textAlign: "center" }}>Outdoor or Indoor</p>
                 <input type="radio" name="outdoor" value="male" /> 1
                 <input type="radio" name="outdoor" value="female" /> 2
@@ -411,7 +419,10 @@ class App extends React.Component {
                 <input type="radio" name="outdoor" value="other" /> 5
                 <p></p>
                 
-                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
+                <br></br>
+                <Form onSubmit={this.nextScreen}>
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
+                </Form>
             </form>
         </div>
     );
@@ -448,7 +459,14 @@ class App extends React.Component {
             <h3 style = {{
                 color: "gray"
             }}>English, Chinese</h3>
+
+            <br></br>
+            <Form onSubmit={this.nextScreen}>
+                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
+            </Form>
         </div>
+       
+
 
         </React.Fragment>
     );
