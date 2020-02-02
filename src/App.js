@@ -60,7 +60,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'finalScreen',
+        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''
