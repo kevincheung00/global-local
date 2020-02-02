@@ -49,7 +49,7 @@ class Map extends Component {
                         this.setState({ setSelectedTour: null, selectedTour: null })}>
                         <div>
                             <h2>{this.state.selectedTour.firstName} {this.state.selectedTour.lastName}</h2>
-                            <p>{this.state.selectedTour.contact}</p>
+                            <p>Phone: {this.state.selectedTour.contact}</p>
                         </div>
                     </Popup>
                 ) : null}
