@@ -28,7 +28,7 @@ class Map extends Component {
                 {...this.state.viewport}
                 width="100vw"
                 height="80vh"
-                mapStyle="mapbox://styles/hbooboo/ck64makrs1pc71io0zphvdtjy"
+                mapStyle="mapbox://styles/hbooboo/ck63y1z7v04rq1inwxtcewbzu"
                 onViewportChange={viewport => this.setState({viewport})}
                 mapboxApiAccessToken={MAPBOX_TOKEN}>
                 {guides.map(guide => (
