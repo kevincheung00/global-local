@@ -60,10 +60,11 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'questionnaire3',
         user: null,
         usernameInput: '',
-        userChoice: ''
+        userChoice: '',
+        render: false
       }
     }
   
@@ -97,10 +98,7 @@ class App extends React.Component {
 
         else if (view == 'signup')
             return this.signupScreen();
-        if (view === 'viewing')
-            return this.browsingTweetsScreen();
-        else if (view === 'tweeting')
-            return this.sendTweetScreen();
+
         else if (view === 'login')
             return this.loginscreen();
 
@@ -118,7 +116,14 @@ class App extends React.Component {
 
         else if (view == "questionnaire1")
             return this.questionnaire1();
-        else if (view === 'finalScreen')
+
+        else if (view == 'finalScreen')
+            return this.finalScreen();
+
+        else if (view == "tourGuideSelection")
+            return this.tourGuideSelection();
+
+        else if (view == "finalScreen")
             return this.finalScreen();
         
     };
@@ -136,7 +141,7 @@ class App extends React.Component {
         <def>
             <h1 fontWeight= "bold" style= {{position: "fixed",left: "20%",top: "15%", fontWeight: "bold"}}>Based on your preferences, we found...</h1>
             <CardGroup style= {{position: "fixed",top: "25%"}}>
-                <Card>
+                <Card   >
                     <Card.Body>
                     <Card.Title><center><b>Leanne Li</b></center></Card.Title>
                     <Card.Text>
@@ -147,14 +152,16 @@ class App extends React.Component {
                     ranging from age 6 to 30 with trainings provided by Best Buddies. Welcome to Toronto!!! <br></br>
                     <b>Credentials:</b> Extensive work experience in Toronto, Mississauga, and other cities within the GTA area.
                     </Card.Text>
-                    <Button style= {{position: "fixed", left: "2%", top: "64%", opacity: '0', height: "250px", width: "344px"}}></Button>
+                        <Form onSubmit={this.nextScreen}>
+                            <Button type="submit" style= {{position: "fixed", left: "2%", top: "64%", opacity: '0', height: "250px", width: "344px"}} ></Button>
+                        </Form>
                     <Card.Img variant='bottom' src={Leanne} sizes='100px160'/>
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
                     </Card.Footer>
                 </Card>
-                <Card>
+                <Card   onSubmit={this.nextScreen}>
                     <Card.Body>
                     <Card.Title><center><b>Kevin Cheung</b></center></Card.Title>
                     <Card.Text>
@@ -165,14 +172,17 @@ class App extends React.Component {
                     Toronto and surrounding areas. <br></br>
                     <b>Credentials:</b> Professionally trained by Best Buddies and received best touring beginner of the year
                     </Card.Text>
-                    <Button style= {{position: "fixed", left: "27%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                    <Form onSubmit={this.nextScreen}>
+
+                        <Button type="submit" style= {{position: "fixed", left: "27%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                   </Form>
                     <Card.Img variant="top" src= {Kevin} />
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
                     </Card.Footer>
                 </Card>
-                <Card>
+                <Card   onSubmit={this.nextScreen}>
                 <Card.Body>
                     <Card.Title><center><b>Jason Kim</b></center></Card.Title>
                     <Card.Text>
@@ -183,14 +193,16 @@ class App extends React.Component {
                     community volunteers and work at Global Local part-time. <br></br>
                     <b>Credentials:</b> Professionally trained by Best Buddies and received top 10 Tour Guide of 2019.
                     </Card.Text>
-                    <Button style= {{position: "fixed", left: "52%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                    <Form onSubmit={this.nextScreen}>
+                        <Button type="submit"style= {{position: "fixed", left: "52%", top: "64%", opacity: '0', height: "260px", width: "344px"}}></Button>
+                    </Form>
                     <Card.Img variant="top" src= {Jason} />
                     </Card.Body>
                     <Card.Footer>
                     <small className="text-muted">Last updated 3 mins ago</small>
                     </Card.Footer>
                 </Card>
-                <Card>
+                <Card   onSubmit={this.nextScreen}>
                 <Card.Body>
                     <Card.Title><center><b>Alvina Lin</b></center></Card.Title>
                     <Card.Text>
@@ -201,7 +213,9 @@ class App extends React.Component {
                      and she will be a great fit if you want an educational trip. <br></br>
                     <b>Credentials:</b> Professionally trained by Best Buddies and received BEST Tour Guide.
                     </Card.Text>
-                    <Button style= {{position: "fixed", left: "78%", top: "66%", opacity: '0', height: "240px", width: "344px"}}></Button>
+                    <Form onSubmit={this.nextScreen}>
+                        <Button type="submit" style= {{position: "fixed", left: "78%", top: "66%", opacity: '0', height: "240px", width: "344px"}}></Button>
+                    </Form>
                     <Card.Img variant="top" src= {Alvina} />
                     </Card.Body>
                     <Card.Footer>
@@ -232,11 +246,20 @@ class App extends React.Component {
 
         else if (this.state.view == "questionnaire2")
             nextScreen = "questionnaire3"
-        
+
+        else if (this.state.view == "questionnaire3") {
+            nextScreen = "tourGuideSelection"
+        }
+
+        else if (this.state.view == "tourGuideSelection"){
+            // window.setTimeout(nextScreen(), 3000);
+            nextScreen = "finalScreen"
+        }
         this.setState({view: nextScreen})
         this.header()
         this.body()
-
+        if (this.state.view == 'tourGuideSelection')
+            setTimeout(nextScreen, 3000);
     }
 
     questionnaire2 = () => (
@@ -246,7 +269,7 @@ class App extends React.Component {
                 <img src={travelGuy} style={{position: "fixed",left: "15%",top: "25%"}}/>
             </div>
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group controlId="formBasicPassword" style={{position: "fixed",left: "50%",top: "30%"}}>
                         <Form.Label>City, Province, Country</Form.Label>
                         <Form.Control type="username" placeholder="Toronto" size="lg"/>
@@ -263,7 +286,7 @@ class App extends React.Component {
                     </Form.Group>
 
                     <br></br>
-                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}} onSubmit={this.nextScreen}>
+                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}}>
                     Submit
                     </Button>
                 </Form>
@@ -271,14 +294,28 @@ class App extends React.Component {
         </div>
     )
 
+    // delay = () => (
+    //     window.setTimeout(, 3000)
+    // )
+    
     questionnaire3 = () => (
-        <div>
+
+        <React.Fragment>
+        <div onclick = {this.nextScreen}>
             <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
             <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
-            to match your preferences with a proffessional Tour Guide tailored to your needs and wants, based
+            to match your preferences with a professional Tour Guide tailored to your needs and wants, based
             on your availability</h2>
             <img src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
         </div>
+
+
+        </React.Fragment>
+
+        
+
+
+    
     )
 
     loginscreen = () => (
@@ -306,7 +343,6 @@ class App extends React.Component {
             </div>
         </div>
     );
-
 
     splashScreen = () => (
         <div className="splashBackground">
