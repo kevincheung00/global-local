@@ -16,6 +16,7 @@ import Kevin from './assets/Keven.jpg';
 import profile from './assets/PROFILE-PIC.PNG'
 import Jason from './assets/Jason.png';
 import Alvina from './assets/Alvina.png';
+import Calendar from 'react-calendar'
 
 
 
@@ -60,7 +61,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'planTrip',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -118,6 +119,10 @@ class App extends React.Component {
 
         else if (view == "questionnaire1")
             return this.questionnaire1();
+
+        else if (view == "planTrip")
+            return this.planTrip();
+            
         else if (view === 'finalScreen')
             return this.finalScreen();
         
@@ -423,6 +428,31 @@ class App extends React.Component {
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
                 </Form>
             </form>
+        </div>
+    );
+
+    planTrip = () => (
+        <div className="plan-trip">
+            <div className="trip-pic">
+                <img src={Leanne} style={{ width: "250px", height: "250px" }}/>
+            </div>
+            <div className="trip-describe">
+                <h1>You Selected Leanne Li!</h1>
+                <h4 style={{ textAlign: "center" }}>Ranking 5/5</h4>
+                <br />
+                <h3 style={{ textAlign: "center" }}>Niagara Personalized Day Tour</h3>
+                <h3 style={{ textAlign: "center" }}>8 - 11 Hours</h3>
+                <br />
+                <p>During my time as your tour guide, I will share with you stories, facts, history, scenic highlights, etc about Niagara Falls in a humorous and educational way.</p>
+                <p>All the attractions (The Hornblower Cruise in Summer, The Helicopter, The Skylon Tower, Journey Behind the Falls, etc) will be planned <b>based on the preferences you submitted earlier.</b></p>
+            </div>
+            <div className="calendar">
+                <Calendar />
+                <br />
+                <Form onSubmit={this.nextScreen}>
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Book Now!</Button>
+                </Form>
+            </div>
         </div>
     );
 
