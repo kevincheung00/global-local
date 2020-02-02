@@ -55,7 +55,6 @@ class App extends React.Component {
       this.state = {
         numClicks: 0,
         view: 'survey',
-        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''
