@@ -55,7 +55,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'login',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -108,6 +108,10 @@ class App extends React.Component {
 
     loginscreen = () => (
         <div className="signup">
+            <img src={girl} style={{ width: "100%" }}/>
+            <h1 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>LOGIN</h1>
+            <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
+            <br />
             <div>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
