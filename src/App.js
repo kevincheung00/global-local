@@ -11,9 +11,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 
 
-
-const date = "January 1st"
-
 const tourguide_data = [
   {
       "id": 1,
@@ -140,9 +137,7 @@ class App extends React.Component {
                     onChange={e => this.setState({usernameInput: e.target.value})}
                 /> */}
                 
-                <br/>
-                <br/>
-                <br/>
+
                 <input className='button' type="submit" value="Submit"/>
             </form>
                         
