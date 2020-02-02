@@ -67,9 +67,8 @@ class App extends React.Component {
         return(
             <div className="all">
             {this.header()}
-            <div className='container'>
                 {this.body()}
-            </div>
+
         </div>
         )
     }
@@ -130,24 +129,24 @@ class App extends React.Component {
     );
 
     splashScreen = () => (
-        <form onSubmit={this.login}>
-            {/* <h1>Username:</h1>
-            <input
-                className='text-input'
-                type="text"
-                name="username"
-                value={this.state.usernameInput}
-                onChange={e => this.setState({usernameInput: e.target.value})}
-            /> */}
-            <div className="splashBackground">
-                <img src={splashBackground} alt="background"/>
-            </div>
-            
-            <br/>
-            <br/>
-            <br/>
-            <input className='button' type="submit" value="Submit"/>
-        </form>
+        <div className="splashBackground">
+            <form onSubmit={this.login}>
+                {/* <h1>Username:</h1>
+                <input
+                    className='text-input'
+                    type="text"
+                    name="username"
+                    value={this.state.usernameInput}
+                    onChange={e => this.setState({usernameInput: e.target.value})}
+                /> */}
+                
+                <br/>
+                <br/>
+                <br/>
+                <input className='button' type="submit" value="Submit"/>
+            </form>
+                        
+        </div>
     );
 
     signupScreen = () => (
