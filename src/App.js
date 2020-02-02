@@ -54,11 +54,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-<<<<<<< HEAD
         view: 'splash',
-=======
-        view: 'questionaire3',
->>>>>>> d5dcf78a130cf4664e2b8cc79448639f24703615
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -99,11 +95,6 @@ class App extends React.Component {
         if (view === 'signup')
             return this.signupScreen();
 
-        if (view === 'viewing')
-            return this.browsingTweetsScreen();
-
-        else if (view === 'tweeting')
-            return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
         else if (view === 'questionaire2')
@@ -113,6 +104,23 @@ class App extends React.Component {
         else if (view === 'questionaire3')
             return this.questionaire3();
     };
+
+    nextScreen = (event) => {
+        let nextScreen = ""
+        if (this.state.view == "splash")
+            nextScreen = "signup"
+
+        else if (this.state.view == "signup")
+            nextScreen = "login"
+
+        else if (this.state.view == "signup")
+            nextScreen = "touristProfile"
+        
+        this.setState({view: nextScreen})
+        this.header()
+        this.body()
+
+    }
 
     questionaire2 = () => (
         <div className= 'questionaire'>
@@ -181,42 +189,13 @@ class App extends React.Component {
         </div>
     );
 
-<<<<<<< HEAD
-    nextScreen = (event) => {
-        let nextScreen = ""
-        if (this.state.view == "splash")
-            nextScreen = "signup"
 
-        else if (this.state.view == "signup")
-            nextScreen = "login"
-
-        else if (this.state.view == "signup")
-            nextScreen = "touristProfile"
-        
-        this.setState({view: nextScreen})
-        this.header()
-        this.body()
-
-    }
-
-
-=======
->>>>>>> d5dcf78a130cf4664e2b8cc79448639f24703615
     splashScreen = () => (
         <div className="splashBackground">
-            {/* <form onSubmit={this.login}> */}
-                {/* <h1>Username:</h1>
-                <input
-                    className='text-input'
-                    type="text"
-                    name="username"
-                    value={this.state.usernameInput}
-                    onChange={e => this.setState({usernameInput: e.target.value})}
-                /> */}
                 
-
-                <input className='button' type="submit" value="Submit"/>
-            {/* </form> */}
+                <form onSubmit={this.nextScreen}>
+                    <input className='button' type="submit" value="Submit"/>
+                </form>
                         
         </div>
     );
