@@ -6,7 +6,9 @@ import './App.css';
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
-import { Form, Button } from 'react-bootstrap';
+import travelGuy from './assets/BACKGROUNDDD.PNG';
+import refreshSHIT from './assets/RefreshShit.png';
+import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 
@@ -53,6 +55,7 @@ class App extends React.Component {
       this.state = {
         numClicks: 0,
         view: 'survey',
+        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -93,20 +96,77 @@ class App extends React.Component {
         if (view === 'signup')
             return this.signupScreen();
 
-        if (view === 'viewing')
-            return this.browsingTweetsScreen();
-
-        else if (view === 'tweeting')
-            return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
-
+        else if (view === 'questionaire2')
+            return this.questionaire2();
         else if (view === 'touristProfile')
             return this.touristProfile();
 
         else if (view == "survey")
             return this.surveyScreen();
+
+        else if (view === 'questionaire3')
+            return this.questionaire3();
     };
+
+    nextScreen = (event) => {
+        let nextScreen = ""
+        if (this.state.view == "splash")
+            nextScreen = "signup"
+
+        else if (this.state.view == "signup")
+            nextScreen = "login"
+
+        else if (this.state.view == "signup")
+            nextScreen = "touristProfile"
+        
+        this.setState({view: nextScreen})
+        this.header()
+        this.body()
+
+    }
+
+    questionaire2 = () => (
+        <div className= 'questionaire'>
+            <h1 style={{textAlign: "left"}}>What's next on your bucketlist</h1>
+            <div className= 'travelGuy'>
+                <img src={travelGuy} style={{position: "fixed",left: "15%",top: "25%"}}/>
+            </div>
+            <div>
+                <Form>
+                    <Form.Group controlId="formBasicPassword" style={{position: "fixed",left: "50%",top: "30%"}}>
+                        <Form.Label>City, Province, Country</Form.Label>
+                        <Form.Control type="username" placeholder="Toronto" size="lg"/>
+                    </Form.Group>
+                
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "40%"}}>
+                        <Form.Label>From</Form.Label>
+                        <Form.Control type="password" placeholder="01/10/2020" size="lg"/>
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword"style={{position: "fixed",left: "50%",top: "50%"}}>
+                        <Form.Label>To</Form.Label>
+                        <Form.Control type="password" placeholder="01/16/2020"  size="lg"/>
+                    </Form.Group>
+
+                    <Button variant="primary" size= "lg" type="submit" style={{position: "fixed",left: "55%",top: "60%"}}>
+                    Submit
+                    </Button>
+                </Form>
+            </div>
+        </div>
+    )
+
+    questionaire3 = () => (
+        <div>
+            <h1 style={{position: "fixed",left: "30%",top: "15%", fontWeight: "bold"}}>We got it!</h1>
+            <h2 style={{position: "fixed",left: "30%",top: "22%", paddingRight: "20%"}}>We are currently using machine learning 
+            to match your preferences with a proffessional Tour Guide tailored to your needs and wants, based
+            on your availability</h2>
+            <img src={refreshSHIT} style= {{position: "fixed", left: "45%", top: "40%"}}/>
+        </div>
+    )
 
     loginscreen = () => (
         <div className="signup">
@@ -115,15 +175,15 @@ class App extends React.Component {
             <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
             <br />
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="username" placeholder="Username" />
+                        <Form.Control type="username" placeholder="fpan25" />
                     </Form.Group>
                 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="*********" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
@@ -134,21 +194,13 @@ class App extends React.Component {
         </div>
     );
 
+
     splashScreen = () => (
         <div className="splashBackground">
-            {/* <form onSubmit={this.login}> */}
-                {/* <h1>Username:</h1>
-                <input
-                    className='text-input'
-                    type="text"
-                    name="username"
-                    value={this.state.usernameInput}
-                    onChange={e => this.setState({usernameInput: e.target.value})}
-                /> */}
                 
-
-                <input className='button' type="submit" value="Submit"/>
-            {/* </form> */}
+                <form onSubmit={this.nextScreen}>
+                    <input className='button' type="submit" value="Submit"/>
+                </form>
                         
         </div>
     );
@@ -156,7 +208,7 @@ class App extends React.Component {
     signupScreen = () => (
         <div className="signup">
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" 
