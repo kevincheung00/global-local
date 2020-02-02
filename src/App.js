@@ -311,9 +311,8 @@ class App extends React.Component {
     splashScreen = () => (
         <div className="splashBackground">
             <Map />
-            <br></br>
             <Form onSubmit={this.nextScreen}>
-                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg" style={{position: "fixed",left: "55%",top: "60%"}}>Continue</Button>
+                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg" style={{ backgroundColor: "B6DBD6"}}>Continue</Button>
             </Form>   
         </div>
     );
@@ -388,35 +387,35 @@ class App extends React.Component {
                 <p></p>
                 
                 <p style={{ textAlign: "center" }}>Urban or Rural</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Urban" value="male" /> 1
+                <input type="radio" name="Urban" value="female" /> 2
+                <input type="radio" name="Urban" value="other" /> 3
+                <input type="radio" name="Urban" value="other" /> 4
+                <input type="radio" name="Urban" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Nature or Technology</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Nature" value="male" /> 1
+                <input type="radio" name="Nature" value="female" /> 2
+                <input type="radio" name="Nature" value="other" /> 3
+                <input type="radio" name="Nature" value="other" /> 4
+                <input type="radio" name="Nature" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Food or Shopping</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Food" value="male" /> 1
+                <input type="radio" name="Food" value="female" /> 2
+                <input type="radio" name="Food" value="other" /> 3
+                <input type="radio" name="Food" value="other" /> 4
+                <input type="radio" name="Food" value="other" /> 5
                 <p></p>
 
                 <p style={{ textAlign: "center" }}>Extrovert or Introvert</p>
-                <input type="radio" name="outdoor" value="male" /> 1
-                <input type="radio" name="outdoor" value="female" /> 2
-                <input type="radio" name="outdoor" value="other" /> 3
-                <input type="radio" name="outdoor" value="other" /> 4
-                <input type="radio" name="outdoor" value="other" /> 5
+                <input type="radio" name="Extrovert" value="male" /> 1
+                <input type="radio" name="Extrovert" value="female" /> 2
+                <input type="radio" name="Extrovert" value="other" /> 3
+                <input type="radio" name="Extrovert" value="other" /> 4
+                <input type="radio" name="Extrovert" value="other" /> 5
                 <p></p>
                 
                 <br></br>
