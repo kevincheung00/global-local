@@ -16,7 +16,7 @@ import Kevin from './assets/Keven.jpg';
 import profile from './assets/PROFILE-PIC.PNG'
 import Jason from './assets/Jason.png';
 import Alvina from './assets/Alvina.png';
-
+import credit from './assets/CreditCards.png';
 
 
 const tourguide_data = [
@@ -60,7 +60,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'paymentScreen',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -120,15 +120,51 @@ class App extends React.Component {
             return this.questionnaire1();
         else if (view === 'finalScreen')
             return this.finalScreen();
+        else if (view === 'paymentScreen')
+            return this.paymentScreen();
         
     };
+
+    paymentScreen = () => (
+        <def style={{position: "fixed",left: "5%",top: "15%"}}>
+            <h1  fontWeight="bold">Payment Details</h1>
+            <h2>Credit Card Info</h2>
+            <Form onSubmit={this.nextScreen}>
+                <Form.Group>
+                    <Form.Label><font size='5'><br></br>Name on card</font></Form.Label>
+                    <Form.Control type="text"
+                    placeholder="Fland Pan" />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label><font size='5'>Card Number</font></Form.Label>
+                    <Form.Control type="email" 
+                    placeholder="1234 **** **** ****" />
+                </Form.Group>
+            
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label><font size='5'>Expiry Date</font></Form.Label>
+                    <Form.Control type="password" 
+                    placeholder="12/20" />
+                </Form.Group>
+            </Form>
+            <h2 style={{position: "fixed",left: "35%",top: "17.4%"}}><br></br>Order Summary</h2>
+            <h3 style={{position: "fixed",left: "35%",top: "30%"}}><font size='5'>*Personalized Toronto Day Tour</font></h3>
+            <h3 style={{position: "fixed",left: "35%",top: "35%"}}><font size='5'>*8 hours</font></h3>
+            <h3 font-weight = 'bold' style={{position: "fixed",left: "35%",top: "41%"}}><font size='5'>
+                    <b>Discount Code: Enactus Hacks</b><br></br>
+                    <b>Original Price: $200 ($25/hr for 8 hours)</b><br></br>
+                    <b>Discounted Price: $<u>180</u></b>
+                </font></h3>
+            <img src = {credit} style={{position: "fixed",left: "25%",top: "40%"}}></img>
+        </def>
+    )
 
     finalScreen = () => (
         <def style={{position: "fixed",left: "5%",top: "15%"}}>
             <h1 fontWeight= "bold">Booking Confirmed</h1>
             <h1 style={{position: "fixed",left: "5%",top: "25%", fontWeight: "bold"}}>What's Next?</h1>
             <h2 style={{position: "fixed",left: "5%",top: "30%"}}>Just sit back and be amazed by <b>Leanne</b>'s personalized tour!</h2>
-
         </def>
     )
 
