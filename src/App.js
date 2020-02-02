@@ -5,6 +5,8 @@ import './App.css';
 // import About from './components/about'
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.png';
+import splashBackground from './assets/Capture.PNG'
+
 
 
 const date = "January 1st"
@@ -73,9 +75,10 @@ class App extends React.Component {
         
         <React.Fragment>
             <div className='header'>
-                <h1>Global Local{this.state.user || ''}</h1>
-                <img src={Logo} alt="Global Local" height="50px" align="top"/>
-
+                <div className="logo">
+                    <img src={Logo} alt="Global Local" height="60px"/>
+                    <h1>GLOBAL LOCAL{this.state.user || ''}</h1>
+                </div>
             </div>
 
 
@@ -98,14 +101,18 @@ class App extends React.Component {
 
     splashScreen = () => (
         <form onSubmit={this.login}>
-            <h1>Username:</h1>
+            {/* <h1>Username:</h1>
             <input
                 className='text-input'
                 type="text"
                 name="username"
                 value={this.state.usernameInput}
                 onChange={e => this.setState({usernameInput: e.target.value})}
-            />
+            /> */}
+            <div className="splashBackground">
+                <img src={splashBackground} alt="background"/>
+            </div>
+            
             <br/>
             <br/>
             <br/>

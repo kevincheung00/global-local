@@ -1,3 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .button {
     background-color: blue; /* Green */
     border: none;
@@ -10,11 +17,11 @@
     cursor: pointer;
   }
   
-  .container {
+  /* .container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
   
   .text-input {
     width: 200px;
@@ -26,11 +33,26 @@
   
   .header {
     background-color: #ADDCD6;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+
+
     /* padding: 20px; */
     position: relative;
-    top: 0px;
     height: 100px;
     font-size: 20px;
-    padding-top: 0px;
-    
+    text-align: left;
+    color: #177379;
+  }
+
+  .logo img {
+    float: left
+  }
+
+  .splashBackground {
+      float: left;
+      position: relative;
+      height: "2px"; 
+      width:"2000px";
   }
