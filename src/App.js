@@ -8,9 +8,8 @@ import Logo from './assets/MAP.PNG';
 import girl from './assets/GIRL.PNG';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import splashBackground from './assets/Capture.PNG';
+import splashBackground from './assets/Capture.PNG'
 
-const date = "January 1st"
 
 const tourguide_data = [
   {
@@ -53,7 +52,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'signup',
+        view: 'login',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -64,9 +63,8 @@ class App extends React.Component {
         return(
             <div className="all">
             {this.header()}
-            <div className='container'>
                 {this.body()}
-            </div>
+
         </div>
         )
     }
@@ -106,6 +104,10 @@ class App extends React.Component {
 
     loginscreen = () => (
         <div className="signup">
+            <img src={girl} style={{ width: "100%" }}/>
+            <h1 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>LOGIN</h1>
+            <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
+            <br />
             <div>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
@@ -127,24 +129,22 @@ class App extends React.Component {
     );
 
     splashScreen = () => (
-        <form onSubmit={this.login}>
-            {/* <h1>Username:</h1>
-            <input
-                className='text-input'
-                type="text"
-                name="username"
-                value={this.state.usernameInput}
-                onChange={e => this.setState({usernameInput: e.target.value})}
-            /> */}
-            <div className="splashBackground">
-                <img src={splashBackground} alt="background"/>
-            </div>
-            
-            <br/>
-            <br/>
-            <br/>
-            <input className='button' type="submit" value="Submit"/>
-        </form>
+        <div className="splashBackground">
+            <form onSubmit={this.login}>
+                {/* <h1>Username:</h1>
+                <input
+                    className='text-input'
+                    type="text"
+                    name="username"
+                    value={this.state.usernameInput}
+                    onChange={e => this.setState({usernameInput: e.target.value})}
+                /> */}
+                
+
+                <input className='button' type="submit" value="Submit"/>
+            </form>
+                        
+        </div>
     );
 
     signupScreen = () => (
