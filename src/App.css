@@ -98,9 +98,6 @@ input[type="radio"]{
 .splashBackground {
     height: 100vh;
     width: 100vh;
-    background-image: url("./assets/Capture.PNG");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .profile {
@@ -118,3 +115,14 @@ input[type="radio"]{
     padding: 10px, 10px, 10px, 10px;
     border-radius: 3px;
 }
+
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 20px;
+  height: 20px;
+} 

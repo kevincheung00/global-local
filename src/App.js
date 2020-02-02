@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Map from './components/map'
+import Map from './components/map'
 // import FirstComponent from "./components/firstComponent"
 // import About from './components/about'
 // import Navibar from './components/navbar'
@@ -54,7 +54,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'survey',
+        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -196,11 +196,10 @@ class App extends React.Component {
 
     splashScreen = () => (
         <div className="splashBackground">
-                
-                <form onSubmit={this.nextScreen}>
-                    <input className='button' type="submit" value="Submit"/>
-                </form>
-                        
+            <Map />
+            <form onSubmit={this.nextScreen}>
+                <input className='button' type="submit" value="Submit"/>
+            </form>   
         </div>
     );
 
