@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Map from './components/map'
+import Map from './components/map'
 // import FirstComponent from "./components/firstComponent"
 // import About from './components/about'
 // import Navibar from './components/navbar'
@@ -13,6 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
 import Leanne from './assets/Leanne.png';
 import Keven from './assets/Keven.jpg';
+import profile from './assets/PROFILE-PIC.PNG'
+
 
 const tourguide_data = [
   {
@@ -81,16 +83,13 @@ class App extends React.Component {
                     <h1>GLOBAL LOCAL{this.state.user || ''}</h1>
                 </div>
             </div>
-
-
         </React.Fragment>
 
     );
 
     body = () => {
-        const {view, allTweets} = this.state;
-        console.log(allTweets);
-        if (view === 'splash')
+        const {view} = this.state;
+        if (view == "splash")
             return this.splashScreen();
         if (view === 'signup')
             return this.signupScreen();
@@ -100,14 +99,22 @@ class App extends React.Component {
             return this.sendTweetScreen();
         else if (view === 'login')
             return this.loginscreen();
-        else if (view === 'questionaire2')
+
+        else if (view == 'questionaire2')
             return this.questionaire2();
-        else if (view === 'touristProfile')
+        else if (view == 'touristProfile')
             return this.touristProfile();
-        else if (view === 'questionaire3')
+
+        else if (view == "survey")
+            return this.surveyScreen();
+
+        else if (view == 'questionaire3')
             return this.questionaire3();
         else if (view === 'tourGuideSelection')
             return this.tourGuideSelection();
+            
+        else if (view == "questionnaire1")
+        return this.questionnaire1();
         
     };
 
@@ -182,6 +189,27 @@ class App extends React.Component {
 
         </def>
     )
+    };
+
+    nextScreen = (event) => {
+        let nextScreen = ""
+        if (this.state.view == "splash")
+            nextScreen = "signup"
+
+        else if (this.state.view == "signup")
+            nextScreen = "login"
+
+        else if (this.state.view == "login")
+            nextScreen = "touristProfile"
+
+        else if (this.state.view == "touristProfile")
+            nextScreen = "questionnaire1"
+        
+        this.setState({view: nextScreen})
+        this.header()
+        this.body()
+
+    }
 
     questionaire2 = () => (
         <div className= 'questionaire'>
@@ -231,7 +259,7 @@ class App extends React.Component {
             <h3 style={{textAlign: "center", fontFamily: "Comic Sans MS, cursive, sans-serif"}}>CONTINUE TO AMAZE ME</h3>
             <br />
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="username" placeholder="fpan25" />
@@ -250,29 +278,20 @@ class App extends React.Component {
         </div>
     );
 
+
     splashScreen = () => (
         <div className="splashBackground">
-            {/* <form onSubmit={this.login}> */}
-                {/* <h1>Username:</h1>
-                <input
-                    className='text-input'
-                    type="text"
-                    name="username"
-                    value={this.state.usernameInput}
-                    onChange={e => this.setState({usernameInput: e.target.value})}
-                /> */}
-                
-
+            <Map />
+            <form onSubmit={this.nextScreen}>
                 <input className='button' type="submit" value="Submit"/>
-            {/* </form> */}
-                        
+            </form>   
         </div>
     );
 
     signupScreen = () => (
         <div className="signup">
             <div>
-                <Form>
+                <Form onSubmit={this.nextScreen}>
                     <Form.Group>
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" 
@@ -325,6 +344,56 @@ class App extends React.Component {
         </div>
     );
 
+    questionnaire1 = () => (
+        <div className="survey">
+            <h1 style={{ textAlign: "center" }}>Who Are You?</h1>
+            <h5 style={{ textAlign: "center" }}>We will match you with a professional guide tailor to your wants</h5><br />
+            <form action="/action_page.php" onSubmit={this.nextScreen} >
+                <p style={{ textAlign: "center" }}>Outdoor or Indoor</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+                
+                <p style={{ textAlign: "center" }}>Urban or Rural</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Nature or Technology</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Food or Shopping</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+
+                <p style={{ textAlign: "center" }}>Extrovert or Introvert</p>
+                <input type="radio" name="outdoor" value="male" /> 1
+                <input type="radio" name="outdoor" value="female" /> 2
+                <input type="radio" name="outdoor" value="other" /> 3
+                <input type="radio" name="outdoor" value="other" /> 4
+                <input type="radio" name="outdoor" value="other" /> 5
+                <p></p>
+                
+                <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">Continue</Button>
+            </form>
+        </div>
+    );
+
     touristProfile = () => (
         <React.Fragment>
         
@@ -333,32 +402,30 @@ class App extends React.Component {
             padding: 20
         }}>Tourist Profile</h1>
 
+        <div className= 'profile-pic'>
+            <img src={profile}/>
+        </div>
+
         <div className="touristProfile">
-        <Form>
-            <Form.Group>
-                <Form.Label>Contact Information</Form.Label>
-                <Form.Control type="text" placeholder="Kevin Cheung" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Disabilities/Special Needs</Form.Label>
-                <Form.Control type="email" placeholder="admin@kevincheung.com" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Dream Destination</Form.Label>
-                <Form.Control type="password" placeholder="********" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasic">
-                <Form.Label>Languages</Form.Label>
-                <Form.Control type="number" placeholder="19" />
-            </Form.Group>
-
-            <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
-            Continue
-            </Button>
-        </Form>
+            <h2>Contact Information</h2>
+            <h3 style={{
+                color: "gray"
+            }}>Fland Pan</h3>
+            <br></br>
+            <h2>Disabilities/Special Needs</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>None</h3>
+            <br></br>
+            <h2>Dream Destination</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>Toronto</h3>
+            <br></br>
+            <h2>Language(s)</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>English, Chinese</h3>
         </div>
 
         </React.Fragment>
