@@ -5,7 +5,7 @@ import './App.css';
 // import About from './components/about'
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.PNG';
-
+import girl from './assets/GIRL.PNG';
 
 const date = "January 1st"
 
@@ -50,7 +50,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'login',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -74,7 +74,7 @@ class App extends React.Component {
         <React.Fragment>
             <div className='header'>
                 <div className="logo">
-                    <img src={Logo} alt="Global Local" height="60px"/>
+                    <img src={Logo} alt="Global Local" height="60px" sc/>
                     <h1>Global Local{this.state.user || ''}</h1>
                 </div>
             </div>
@@ -90,12 +90,20 @@ class App extends React.Component {
         if (view === 'splash')
             return this.splashScreen();
 
-        if (view === 'viewing')
+        else if (view === 'viewing')
             return this.browsingTweetsScreen();
 
-        if (view === 'tweeting')
+        else if (view === 'tweeting')
             return this.sendTweetScreen();
+        else if (view === 'login')
+            return this.loginscreen();
     };
+
+    loginscreen = () => (
+        <div className='girlImg'>
+            <img src={girl} alt=""/>
+        </div>
+    );
 
     splashScreen = () => (
         <form onSubmit={this.login}>

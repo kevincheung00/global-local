@@ -35,3 +35,11 @@
   .logo img {
     float: left
   }
+
+  .girlImg{
+    position: relative;
+    width: 411px;
+    height: 306px;
+    left: 524px;
+    top: 186px;
+  }
