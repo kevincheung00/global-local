@@ -43,4 +43,10 @@ class User {
     }
 }
 
+class Tourist extends User {
+    constructor(username, password, email, newName, newAge, newLocation){
+        super(username,password,email,newName,newAge,newLocation)
+    }
+}
+
 export default User;
