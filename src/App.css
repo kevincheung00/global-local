@@ -18,6 +18,7 @@ html, body {
 
 
 .button {
+    position: relative;
     background: #B6DBD6;    border: none;
     color: white;
     padding: 15px 32px;
@@ -26,6 +27,7 @@ html, body {
     width: 200px;
     font-size: 16px;
     cursor: pointer;
+
   }
   
 .text-input {
@@ -112,9 +114,13 @@ input[type="radio"]{
 
 .touristProfile {
     position: fixed;
-    width: 25%;
-    top: 20%;
-    left: 60%;
-    padding: 10px, 10px, 10px, 10px;
-    border-radius: 3px;
+    top: 25%;
+    left: 55%;
+}
+
+.profile-pic {
+    position: fixed;
+    top: 30%;
+    right: 65%;
+    height: 100%;
 }

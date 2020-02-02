@@ -11,6 +11,7 @@ import refreshSHIT from './assets/RefreshShit.png';
 import { Form, Button, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import splashBackground from './assets/Capture.PNG'
+import profile from './assets/PROFILE-PIC.PNG'
 
 
 const tourguide_data = [
@@ -54,7 +55,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'survey',
+        view: 'splash',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -80,33 +81,34 @@ class App extends React.Component {
                     <h1>GLOBAL LOCAL{this.state.user || ''}</h1>
                 </div>
             </div>
-
-
         </React.Fragment>
 
     );
 
     body = () => {
-        const {view, allTweets} = this.state;
-        console.log(allTweets);
-        if (view === 'splash')
+        const {view} = this.state;
+        if (view == "splash")
             return this.splashScreen();
 
-        if (view === 'signup')
+        if (view == 'signup')
             return this.signupScreen();
 
-        else if (view === 'login')
+        else if (view == 'login')
             return this.loginscreen();
-        else if (view === 'questionaire2')
+
+        else if (view == 'questionaire2')
             return this.questionaire2();
-        else if (view === 'touristProfile')
+        else if (view == 'touristProfile')
             return this.touristProfile();
 
         else if (view == "survey")
             return this.surveyScreen();
 
-        else if (view === 'questionaire3')
+        else if (view == 'questionaire3')
             return this.questionaire3();
+
+        else if (view == "questionnaire1")
+            return this.questionnaire1();
     };
 
     nextScreen = (event) => {
@@ -119,6 +121,9 @@ class App extends React.Component {
 
         else if (this.state.view == "login")
             nextScreen = "touristProfile"
+
+        else if (this.state.view == "touristProfile")
+            nextScreen = "questionnaire1"
         
         this.setState({view: nextScreen})
         this.header()
@@ -260,11 +265,11 @@ class App extends React.Component {
         </div>
     );
 
-    surveyScreen = () => (
+    questionnaire1 = () => (
         <div className="survey">
             <h1 style={{ textAlign: "center" }}>Who Are You?</h1>
             <h5 style={{ textAlign: "center" }}>We will match you with a professional guide tailor to your wants</h5><br />
-            <form action="/action_page.php" >
+            <form action="/action_page.php" onSubmit={this.nextScreen} >
                 <p style={{ textAlign: "center" }}>Outdoor or Indoor</p>
                 <input type="radio" name="outdoor" value="male" /> 1
                 <input type="radio" name="outdoor" value="female" /> 2
@@ -318,32 +323,30 @@ class App extends React.Component {
             padding: 20
         }}>Tourist Profile</h1>
 
+        <div className= 'profile-pic'>
+            <img src={profile}/>
+        </div>
+
         <div className="touristProfile">
-        <Form>
-            <Form.Group>
-                <Form.Label>Contact Information</Form.Label>
-                <Form.Control type="text" placeholder="Kevin Cheung" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Disabilities/Special Needs</Form.Label>
-                <Form.Control type="email" placeholder="admin@kevincheung.com" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Dream Destination</Form.Label>
-                <Form.Control type="password" placeholder="********" />
-            </Form.Group>
-
-            <Form.Group controlId="formBasic">
-                <Form.Label>Languages</Form.Label>
-                <Form.Control type="number" placeholder="19" />
-            </Form.Group>
-
-            <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
-            Continue
-            </Button>
-        </Form>
+            <h2>Contact Information</h2>
+            <h3 style={{
+                color: "gray"
+            }}>Fland Pan</h3>
+            <br></br>
+            <h2>Disabilities/Special Needs</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>None</h3>
+            <br></br>
+            <h2>Dream Destination</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>Toronto</h3>
+            <br></br>
+            <h2>Language(s)</h2>
+            <h3 style = {{
+                color: "gray"
+            }}>English, Chinese</h3>
         </div>
 
         </React.Fragment>
