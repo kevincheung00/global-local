@@ -7,6 +7,8 @@ import './App.css';
 import Logo from './assets/MAP.PNG';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import splashBackground from './assets/Capture.PNG'
+
 
 
 const date = "January 1st"
@@ -77,7 +79,7 @@ class App extends React.Component {
             <div className='header'>
                 <div className="logo">
                     <img src={Logo} alt="Global Local" height="60px"/>
-                    <h1>Global Local{this.state.user || ''}</h1>
+                    <h1>GLOBAL LOCAL{this.state.user || ''}</h1>
                 </div>
             </div>
 
@@ -104,14 +106,18 @@ class App extends React.Component {
 
     splashScreen = () => (
         <form onSubmit={this.login}>
-            <h1>Username:</h1>
+            {/* <h1>Username:</h1>
             <input
                 className='text-input'
                 type="text"
                 name="username"
                 value={this.state.usernameInput}
                 onChange={e => this.setState({usernameInput: e.target.value})}
-            />
+            /> */}
+            <div className="splashBackground">
+                <img src={splashBackground} alt="background"/>
+            </div>
+            
             <br/>
             <br/>
             <br/>

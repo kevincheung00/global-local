@@ -9,6 +9,13 @@ html, body {
   width: 100%;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .button {
     background-color: blue; /* Green */
     border: none;
@@ -21,12 +28,13 @@ html, body {
     cursor: pointer;
   }
   
-  .container {
+  /* .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
+  } */
   
   .text-input {
     width: 200px;
@@ -38,10 +46,17 @@ html, body {
   
   .header {
     background-color: #ADDCD6;
-    padding: 20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+
+
+    /* padding: 20px; */
+    position: relative;
     height: 100px;
     font-size: 20px;
-    text-align: left
+    text-align: left;
+    color: #177379;
   }
 
   .logo img {
@@ -62,4 +77,11 @@ html, body {
     left: 40%;
     padding: 10px, 10px, 10px, 10px;
     border-radius: 3px;
+  }
+  
+  .splashBackground {
+      float: left;
+      position: relative;
+      height: "2px"; 
+      width:"2000px";
   }
