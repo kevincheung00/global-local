@@ -5,6 +5,8 @@ import './App.css';
 // import About from './components/about'
 // import Navibar from './components/navbar'
 import Logo from './assets/MAP.PNG';
+import { Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const date = "January 1st"
@@ -50,7 +52,7 @@ class App extends React.Component {
       super(props);
       this.state = {
         numClicks: 0,
-        view: 'splash',
+        view: 'signup',
         user: null,
         usernameInput: '',
         userChoice: ''
@@ -60,7 +62,7 @@ class App extends React.Component {
   
     render() {
         return(
-            <div>
+            <div className="all">
             {this.header()}
             <div className='container'>
                 {this.body()}
@@ -90,6 +92,9 @@ class App extends React.Component {
         if (view === 'splash')
             return this.splashScreen();
 
+        if (view === 'signup')
+            return this.signupScreen();
+
         if (view === 'viewing')
             return this.browsingTweetsScreen();
 
@@ -113,6 +118,52 @@ class App extends React.Component {
             <input className='button' type="submit" value="Submit"/>
         </form>
     );
+
+    signupScreen = () => (
+        <div className="signup">
+            <div className="signup-form">
+                <Form>
+                    <Form.Group>
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="text" placeholder="Username" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" />
+                    </Form.Group>
+                
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasic">
+                        <Form.Label>Age</Form.Label>
+                        <Form.Control type="number" placeholder="Age" />
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>Location</Form.Label>
+                        <Form.Control type="text" placeholder="Location" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Become a Tourist" />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Become a Tour Guide" />
+                    </Form.Group>
+
+                    <Button variant="primary" type="submit" className="btn-block mr-1 mt-1 btn-lg">
+                    Submit
+                    </Button>
+                </Form>
+            </div>
+        </div>
+    );
+
     }
 
 

@@ -1,3 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.all {
+  height: 100vh;
+  width: 100%;
+}
+
 .button {
     background-color: blue; /* Green */
     border: none;
@@ -14,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
   }
   
   .text-input {
@@ -34,4 +46,20 @@
 
   .logo img {
     float: left
+  }
+
+  .login {
+    background-color: rgb(206, 200, 200);
+    padding: 10px 10px 10px 10px;
+    vertical-align: middle;
+
+  }
+
+  .signup {
+    position: fixed;
+    width: 25%;
+    top: 20%;
+    left: 40%;
+    padding: 10px, 10px, 10px, 10px;
+    border-radius: 3px;
   }
